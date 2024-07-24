@@ -1,32 +1,39 @@
 package outgoing.rooms.prepare;
 
-import habbo.habbos.IHabbo;
-import habbo.rooms.IRoom;
-import habbo.rooms.writers.RoomWriter;
+import com.google.inject.Inject;
+import serializers.rooms.RoomSerializer;
 import networking.packets.IOutgoingPacket;
+import networking.packets.IPacketWriter;
+import outgoing.OutgoingHeaders;
+import packets.dto.outgoing.room.data.RoomDataComposerDTO;
 
 
-public class RoomDataComposer extends IOutgoingPacket<U> {
-    public RoomDataComposer(IRoom room, IHabbo habbo, boolean roomForward, boolean enterRoom) {
-        super(OutgoingHeaders.RoomDataComposer);
+public class RoomDataComposer implements IOutgoingPacket<RoomDataComposerDTO> {
+    private @Inject RoomSerializer roomSerializer;
+    @Override
+    public void compose(IPacketWriter writer, RoomDataComposerDTO dto) {
+        this.roomSerializer.serialize(writer, dto.room());
 
-        RoomWriter.write(room, this);
+        writer.appendBoolean(dto.roomForward());
+        writer.appendBoolean(dto.room().getData().isStaffPicked());
+        writer.appendBoolean(false); // TODO: Check if habbo is member of room guild
+        writer.appendBoolean(false); // TODO: is muted
 
-        this.appendBoolean(roomForward);
-        this.appendBoolean(room.getData().isStaffPicked());
-        this.appendBoolean(false); // TODO: Check if habbo is member of room guild
-        this.appendBoolean(false); // TODO: is muted
+        writer.appendInt(dto.room().getData().getWhoCanMute());
+        writer.appendInt(dto.room().getData().getWhoCanKick());
+        writer.appendInt(dto.room().getData().getWhoCanBan());
 
-        this.appendInt(room.getData().getWhoCanMute());
-        this.appendInt(room.getData().getWhoCanKick());
-        this.appendInt(room.getData().getWhoCanBan());
+        writer.appendBoolean(false); // TODO: Permissions: mute all button
 
-        this.appendBoolean(false); // TODO: Permissions: mute all button
+        writer.appendInt(dto.room().getData().getChatMode());
+        writer.appendInt(dto.room().getData().getChatWeight());
+        writer.appendInt(dto.room().getData().getChatSpeed());
+        writer.appendInt(dto.room().getData().getChatDistance());
+        writer.appendInt(dto.room().getData().getChatProtection());
+    }
 
-        this.appendInt(room.getData().getChatMode());
-        this.appendInt(room.getData().getChatWeight());
-        this.appendInt(room.getData().getChatSpeed());
-        this.appendInt(room.getData().getChatDistance());
-        this.appendInt(room.getData().getChatProtection());
+    @Override
+    public int getHeaderId() {
+        return OutgoingHeaders.RoomDataComposer;
     }
 }
