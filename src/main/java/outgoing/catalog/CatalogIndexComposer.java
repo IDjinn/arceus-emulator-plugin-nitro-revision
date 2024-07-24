@@ -2,11 +2,11 @@ package outgoing.catalog;
 
 import habbo.catalog.pages.ICatalogPage;
 import networking.packets.IPacketWriter;
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.catalog.CatalogIndexComposerDTO;
 
-public class CatalogIndexComposer implements OutgoingPacket<CatalogIndexComposerDTO> {
+public class CatalogIndexComposer implements IOutgoingPacket<CatalogIndexComposerDTO> {
     @Override
     public void compose(IPacketWriter writer, CatalogIndexComposerDTO dto) {
         writer.appendBoolean(true, "isVisible");

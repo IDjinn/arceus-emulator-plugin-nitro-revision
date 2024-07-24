@@ -2,11 +2,11 @@ package outgoing.rooms.entities.chat;
 
 import com.google.common.collect.Sets;
 import habbo.rooms.entities.IRoomEntity;
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 
 import java.util.Set;
 
-public class RoomUserTalkMessageComposer extends OutgoingPacket<U> {
+public class RoomUserTalkMessageComposer extends IOutgoingPacket<U> {
     public RoomUserTalkMessageComposer(final IRoomEntity entity,
                                        final String message) {
         this(entity, message, 0, 0, Sets.newHashSet());

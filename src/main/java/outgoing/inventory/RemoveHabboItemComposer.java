@@ -1,13 +1,12 @@
 package outgoing.inventory;
 
-import networking.packets.IPacketDTO;
 import networking.packets.IPacketWriter;
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.inventory.RemoveHabboItemComposerDTO;
 
 
-public class RemoveHabboItemComposer implements OutgoingPacket<RemoveHabboItemComposerDTO> {
+public class RemoveHabboItemComposer implements IOutgoingPacket<RemoveHabboItemComposerDTO> {
     @Override
     public void compose(IPacketWriter writer, RemoveHabboItemComposerDTO dto) {
         writer.appendInt(dto.itemId());

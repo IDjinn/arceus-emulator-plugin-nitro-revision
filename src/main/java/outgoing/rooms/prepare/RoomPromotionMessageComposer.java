@@ -1,9 +1,9 @@
 package outgoing.rooms.prepare;
 
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 
 
-public class RoomPromotionMessageComposer extends OutgoingPacket<U> {
+public class RoomPromotionMessageComposer extends IOutgoingPacket<U> {
     public RoomPromotionMessageComposer() {
         super(OutgoingHeaders.RoomPromotionMessageComposer);
         this.appendInt(-1);

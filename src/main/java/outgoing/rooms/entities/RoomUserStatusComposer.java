@@ -1,11 +1,11 @@
 package outgoing.rooms.entities;
 
 import habbo.rooms.entities.IRoomEntity;
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 
 import java.util.Collection;
 
-public class RoomUserStatusComposer extends OutgoingPacket<U> {
+public class RoomUserStatusComposer extends IOutgoingPacket<U> {
     public RoomUserStatusComposer(IRoomEntity entity) {
         super(OutgoingHeaders.RoomUserStatusComposer);
         this.appendInt(1);

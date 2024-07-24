@@ -1,11 +1,11 @@
 package outgoing.session.logindata;
 
 import networking.packets.IPacketWriter;
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 import networking.packets.IPacketDTO;
 import outgoing.OutgoingHeaders;
 
-public class MeMenuSettingsComposer implements OutgoingPacket<IPacketDTO> { // TODO: USER CONFIGURATION SETTINGS
+public class MeMenuSettingsComposer implements IOutgoingPacket<IPacketDTO> { // TODO: USER CONFIGURATION SETTINGS
     @Override
     public void compose(final IPacketWriter writer, final IPacketDTO dto) {
         writer.appendInt(100);

@@ -1,10 +1,10 @@
 package outgoing.rooms.objects.floor;
 
 import habbo.rooms.components.objects.items.floor.IFloorFloorItem;
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 
 
-public class RemoveFloorItemComposer extends OutgoingPacket<U> {
+public class RemoveFloorItemComposer extends IOutgoingPacket<U> {
     public RemoveFloorItemComposer(IFloorFloorItem floorItem, int pickupPlayerId, int delay) {
         super(OutgoingHeaders.RemoveFloorItemComposer);
 

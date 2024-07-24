@@ -6,7 +6,7 @@ import habbo.catalog.ICatalogManager;
 import networking.client.IClient;
 import networking.packets.IIncomingPacket;
 import networking.packets.IncomingEvent;
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 import packets.incoming.IncomingHeaders;
 import packets.outgoing.catalog.CatalogIndexComposer;
 
@@ -24,7 +24,7 @@ public class RequestCatalogModeEvent extends IncomingEvent {
 
     @Override
     public void parse(IIncomingPacket packet, IClient client) {
-        client.sendMessage(new OutgoingPacket<U>(3828).appendInt(0));
+        client.sendMessage(new IOutgoingPacket<U>(3828).appendInt(0));
         client.sendMessage(new CatalogIndexComposer(false, "normal",
                 this.catalogManager.getCatalogPagesForHabbo(this.RootPageId, client.getHabbo())));
     }

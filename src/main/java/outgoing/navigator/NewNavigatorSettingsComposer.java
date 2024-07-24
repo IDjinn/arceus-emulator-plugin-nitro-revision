@@ -2,11 +2,11 @@ package outgoing.navigator;
 
 import habbo.habbos.data.navigator.IHabboNavigatorWindowSettings;
 import networking.packets.IPacketWriter;
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 import outgoing.OutgoingHeaders;
 
 
-public class NewNavigatorSettingsComposer implements OutgoingPacket<IHabboNavigatorWindowSettings> {
+public class NewNavigatorSettingsComposer implements IOutgoingPacket<IHabboNavigatorWindowSettings> {
     @Override
     public void compose(IPacketWriter writer, IHabboNavigatorWindowSettings settings) {
         writer.appendInt(settings.getWindowX());

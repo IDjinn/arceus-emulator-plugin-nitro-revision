@@ -2,11 +2,11 @@ package outgoing.navigator;
 
 import networking.packets.IPacketDTO;
 import networking.packets.IPacketWriter;
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 import outgoing.OutgoingHeaders;
 
 
-public class NewNavigatorCollapsedCategoriesComposer implements OutgoingPacket<IPacketDTO> {
+public class NewNavigatorCollapsedCategoriesComposer implements IOutgoingPacket<IPacketDTO> {
     @Override
     public void compose(IPacketWriter writer, IPacketDTO dto) {
         writer.appendInt(46);

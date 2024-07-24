@@ -1,14 +1,11 @@
 package outgoing.navigator;
 
-import habbo.habbos.data.navigator.IHabboNavigatorSearch;
 import networking.packets.IPacketWriter;
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.navigator.NewNavigatorSavedSearchesComposerDTO;
 
-import java.util.List;
-
-public class NewNavigatorSavedSearchesComposer implements OutgoingPacket<NewNavigatorSavedSearchesComposerDTO> {
+public class NewNavigatorSavedSearchesComposer implements IOutgoingPacket<NewNavigatorSavedSearchesComposerDTO> {
     @Override
     public void compose(IPacketWriter writer, NewNavigatorSavedSearchesComposerDTO dto) {
         writer.appendInt(dto.searches().size());

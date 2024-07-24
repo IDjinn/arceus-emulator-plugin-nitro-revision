@@ -1,14 +1,12 @@
 package outgoing.navigator;
 
-import habbo.navigator.INavigatorManager;
-import habbo.navigator.data.INavigatorEventCategory;
 import networking.packets.IPacketWriter;
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.navigator.NewNavigatorEventCategoriesComposerDTO;
 
 
-public class NewNavigatorEventCategoriesComposer implements OutgoingPacket<NewNavigatorEventCategoriesComposerDTO> {
+public class NewNavigatorEventCategoriesComposer implements IOutgoingPacket<NewNavigatorEventCategoriesComposerDTO> {
     @Override
     public void compose(IPacketWriter writer, NewNavigatorEventCategoriesComposerDTO dto) {
         writer.appendInt(dto.categories().size());

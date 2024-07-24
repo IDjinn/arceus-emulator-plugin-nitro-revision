@@ -2,11 +2,11 @@ package outgoing.inventory;
 
 import networking.packets.IPacketDTO;
 import networking.packets.IPacketWriter;
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 import outgoing.OutgoingHeaders;
 
 
-public class InventoryRefreshComposer implements OutgoingPacket<IPacketDTO> {
+public class InventoryRefreshComposer implements IOutgoingPacket<IPacketDTO> {
     @Override
     public void compose(IPacketWriter writer, IPacketDTO dto) {
     }

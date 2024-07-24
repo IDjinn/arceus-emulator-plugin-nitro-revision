@@ -2,14 +2,12 @@ package outgoing.inventory;
 
 import habbo.habbos.data.badges.IHabboBadge;
 import networking.packets.IPacketWriter;
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.inventory.InventoryBadgesComposerDTO;
 import packets.outgoing.badges.UserBadgesComposer;
 
-import java.util.Map;
-
-public class InventoryBadgesComposer implements OutgoingPacket<InventoryBadgesComposerDTO> {
+public class InventoryBadgesComposer implements IOutgoingPacket<InventoryBadgesComposerDTO> {
     @Override
     public void compose(IPacketWriter writer, InventoryBadgesComposerDTO dto) {
         writer.appendInt(dto.badges().size());

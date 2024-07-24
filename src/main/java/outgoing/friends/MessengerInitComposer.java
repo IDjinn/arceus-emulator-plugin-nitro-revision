@@ -1,13 +1,12 @@
 package outgoing.friends;
 
-import habbo.habbos.IHabbo;
 import networking.packets.IPacketDTO;
 import networking.packets.IPacketWriter;
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 import outgoing.OutgoingHeaders;
 
 
-public class MessengerInitComposer implements OutgoingPacket<IPacketDTO> {
+public class MessengerInitComposer implements IOutgoingPacket<IPacketDTO> {
     @Override
     public void compose(IPacketWriter writer, IPacketDTO dto) {
         writer.appendInt(Integer.MAX_VALUE);

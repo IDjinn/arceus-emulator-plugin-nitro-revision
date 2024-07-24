@@ -1,14 +1,11 @@
 package outgoing.inventory;
 
-import habbo.habbos.inventory.IHabboInventoryItem;
 import networking.packets.IPacketWriter;
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.inventory.InventoryItemsComposerDTO;
 
-import java.util.List;
-
-public class InventoryItemsComposer implements OutgoingPacket<InventoryItemsComposerDTO> {
+public class InventoryItemsComposer implements IOutgoingPacket<InventoryItemsComposerDTO> {
     @Override
     public void compose(IPacketWriter writer, InventoryItemsComposerDTO dto) {
         writer.appendInt(dto.fragment());

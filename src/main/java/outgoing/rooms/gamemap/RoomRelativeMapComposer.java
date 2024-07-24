@@ -2,10 +2,10 @@ package outgoing.rooms.gamemap;
 
 import habbo.rooms.components.gamemap.IRoomGameMap;
 import habbo.rooms.components.gamemap.IRoomTile;
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 
 
-public class RoomRelativeMapComposer extends OutgoingPacket<U> {
+public class RoomRelativeMapComposer extends IOutgoingPacket<U> {
     private static final int STACKING_BLOCKED_FLAG = 0x4000;
     private static final int ENCODE_HEIGHT_FLAG = 0x0100;
     private static final int HEIGHT_FLAG = 0x4000;
@@ -27,7 +27,7 @@ public class RoomRelativeMapComposer extends OutgoingPacket<U> {
         return (int) (height * ENCODE_HEIGHT_FLAG);
     }
 
-    public static void serializeTileHeight(final OutgoingPacket<U> packet, final IRoomTile tile) {
+    public static void serializeTileHeight(final IOutgoingPacket<U> packet, final IRoomTile tile) {
         final var relativeMapHeight = tile.getRelativeMapHeight();
         if (relativeMapHeight.isPresent()) {
             packet.appendShort(encodeTileHeight(relativeMapHeight.get()));

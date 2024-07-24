@@ -1,9 +1,9 @@
 package outgoing.rooms.prepare;
 
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 
 
-public class HideDoorbellComposer extends OutgoingPacket<U> {
+public class HideDoorbellComposer extends IOutgoingPacket<U> {
     public HideDoorbellComposer() {
         super(OutgoingHeaders.HideDoorbellComposer);
     }

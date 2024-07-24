@@ -1,11 +1,11 @@
 package outgoing.rooms.gamemap;
 
 import habbo.rooms.components.gamemap.IRoomTile;
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 
 import java.util.List;
 
-public class UpdateStackHeightComposer extends OutgoingPacket<U> {
+public class UpdateStackHeightComposer extends IOutgoingPacket<U> {
     public UpdateStackHeightComposer(final List<IRoomTile> tiles) {
         super(OutgoingHeaders.UpdateStackHeightComposer);
 

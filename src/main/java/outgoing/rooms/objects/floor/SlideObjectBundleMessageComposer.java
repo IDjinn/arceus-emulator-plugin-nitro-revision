@@ -1,11 +1,11 @@
 package outgoing.rooms.objects.floor;
 
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 import utils.pathfinder.Position;
 
 import java.util.Collection;
 
-public class SlideObjectBundleMessageComposer extends OutgoingPacket<U> {
+public class SlideObjectBundleMessageComposer extends IOutgoingPacket<U> {
 
     public SlideObjectBundleMessageComposer(Position oldPosition, Position nextPosition, Collection<SlideObjectEntry> objects,
                                             int rollerId) {

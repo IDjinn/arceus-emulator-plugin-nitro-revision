@@ -2,11 +2,11 @@ package outgoing.navigator;
 
 import networking.packets.IPacketDTO;
 import networking.packets.IPacketWriter;
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 import outgoing.OutgoingHeaders;
 
 
-public class CanCreateRoomComposer implements OutgoingPacket<IPacketDTO> {
+public class CanCreateRoomComposer implements IOutgoingPacket<IPacketDTO> {
     @Override
     public void compose(IPacketWriter writer, IPacketDTO dto) {
         writer.appendInt(0); // 0 = can create room, 1 = room limit reached

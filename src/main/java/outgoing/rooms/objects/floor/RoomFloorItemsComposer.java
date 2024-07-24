@@ -2,12 +2,12 @@ package outgoing.rooms.objects.floor;
 
 import habbo.furniture.FurnitureUsagePolicy;
 import habbo.rooms.components.objects.items.floor.IFloorFloorItem;
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 
 import java.util.Collection;
 import java.util.List;
 
-public class RoomFloorItemsComposer extends OutgoingPacket<U> {
+public class RoomFloorItemsComposer extends IOutgoingPacket<U> {
     public RoomFloorItemsComposer(List<String> owners, Collection<? extends IFloorFloorItem> allItems) {
         super(OutgoingHeaders.RoomFloorItemsComposer);
         this.appendInt(owners.size());

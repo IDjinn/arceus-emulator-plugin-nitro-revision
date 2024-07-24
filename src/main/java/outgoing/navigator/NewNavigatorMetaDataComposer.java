@@ -1,15 +1,12 @@
 package outgoing.navigator;
 
-import habbo.habbos.data.IHabboNavigator;
 import habbo.habbos.data.navigator.IHabboNavigatorSearch;
 import networking.packets.IPacketWriter;
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.navigator.NewNavigatorMetaDataComposerDTO;
 
-import java.util.List;
-
-public class NewNavigatorMetaDataComposer implements OutgoingPacket<NewNavigatorMetaDataComposerDTO> {
+public class NewNavigatorMetaDataComposer implements IOutgoingPacket<NewNavigatorMetaDataComposerDTO> {
     @Override
     public void compose(IPacketWriter writer, NewNavigatorMetaDataComposerDTO dto) {
         writer.appendInt(NewNavigatorMetaDataComposerDTO.tabs.length);

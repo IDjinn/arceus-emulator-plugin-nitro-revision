@@ -2,10 +2,10 @@ package outgoing.rooms.objects.floor;
 
 import habbo.furniture.FurnitureUsagePolicy;
 import habbo.rooms.components.objects.items.floor.IFloorFloorItem;
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 
 
-public class AddFloorItemComposer extends OutgoingPacket<U> {
+public class AddFloorItemComposer extends IOutgoingPacket<U> {
     public AddFloorItemComposer(IFloorFloorItem floorItem) {
         super(OutgoingHeaders.AddFloorItemComposer);
 

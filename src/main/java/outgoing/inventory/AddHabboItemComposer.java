@@ -1,14 +1,11 @@
 package outgoing.inventory;
 
 import networking.packets.IPacketWriter;
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 import outgoing.OutgoingHeaders;
-import packets.dto.outgoing.inventory.AddHabboItemCategory;
 import packets.dto.outgoing.inventory.AddHabboItemComposerDTO;
 
-import java.util.List;
-
-public class AddHabboItemComposer implements OutgoingPacket<AddHabboItemComposerDTO> {
+public class AddHabboItemComposer implements IOutgoingPacket<AddHabboItemComposerDTO> {
     @Override
     public void compose(IPacketWriter writer, AddHabboItemComposerDTO dto) {
         writer.appendInt(1, "total unseen categories");

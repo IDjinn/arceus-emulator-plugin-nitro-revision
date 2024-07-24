@@ -2,10 +2,10 @@ package outgoing.rooms.objects.wall;
 
 import habbo.furniture.FurnitureUsagePolicy;
 import habbo.rooms.components.objects.items.wall.IWallItem;
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 
 
-public class WallItemUpdateComposer extends OutgoingPacket<U> {
+public class WallItemUpdateComposer extends IOutgoingPacket<U> {
 
     public WallItemUpdateComposer(IWallItem wallItem) {
         super(OutgoingHeaders.WallItemUpdateComposer);

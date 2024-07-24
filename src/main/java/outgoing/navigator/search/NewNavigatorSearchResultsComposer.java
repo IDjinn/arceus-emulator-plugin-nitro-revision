@@ -2,13 +2,11 @@ package outgoing.navigator.search;
 
 import habbo.navigator.data.INavigatorResultCategory;
 import networking.packets.IPacketWriter;
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.navigator.NewNavigatorSearchResultsComposerDTO;
 
-import java.util.List;
-
-public class NewNavigatorSearchResultsComposer implements OutgoingPacket<NewNavigatorSearchResultsComposerDTO> {
+public class NewNavigatorSearchResultsComposer implements IOutgoingPacket<NewNavigatorSearchResultsComposerDTO> {
     @Override
     public void compose(IPacketWriter writer, NewNavigatorSearchResultsComposerDTO dto) {
         writer.appendString(dto.code());

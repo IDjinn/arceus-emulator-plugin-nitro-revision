@@ -1,13 +1,12 @@
 package outgoing.catalog;
 
-import habbo.catalog.items.ICatalogItem;
 import networking.packets.IPacketWriter;
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.catalog.PurchaseOkComposerDTO;
 
 
-public class PurchaseOkComposer implements OutgoingPacket<PurchaseOkComposerDTO> {
+public class PurchaseOkComposer implements IOutgoingPacket<PurchaseOkComposerDTO> {
     @Override
     public void compose(IPacketWriter writer, PurchaseOkComposerDTO dto) {
         final var item = dto.catalogItem();

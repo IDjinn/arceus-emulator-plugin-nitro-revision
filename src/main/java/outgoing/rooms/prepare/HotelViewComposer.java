@@ -1,9 +1,9 @@
 package outgoing.rooms.prepare;
 
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 
 
-public class HotelViewComposer extends OutgoingPacket<U> {
+public class HotelViewComposer extends IOutgoingPacket<U> {
     public HotelViewComposer() {
         super(OutgoingHeaders.HotelViewComposer);
     }

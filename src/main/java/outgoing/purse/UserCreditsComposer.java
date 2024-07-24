@@ -1,13 +1,19 @@
 package outgoing.purse;
 
-import habbo.habbos.IHabbo;
-import networking.packets.OutgoingPacket;
+import networking.packets.IPacketWriter;
+import networking.packets.IOutgoingPacket;
+import outgoing.OutgoingHeaders;
+import packets.dto.outgoing.purse.UserCreditsComposerDTO;
 
 
-public class UserCreditsComposer extends OutgoingPacket<U> {
-    public UserCreditsComposer(IHabbo habbo) {
-        super(OutgoingHeaders.UserCreditsComposer);
+public class UserCreditsComposer implements IOutgoingPacket<UserCreditsComposerDTO> {
+    @Override
+    public void compose(IPacketWriter writer, UserCreditsComposerDTO dto) {
+        writer.appendString(STR."\{dto.value()}");
+    }
 
-        this.appendString(STR."\{habbo.getData().getCredits()}");
+    @Override
+    public int getHeaderId() {
+        return OutgoingHeaders.UserCreditsComposer;
     }
 }

@@ -1,10 +1,10 @@
 package outgoing.rooms.objects.wall;
 
 import habbo.rooms.components.objects.items.wall.IWallItem;
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 
 
-public class RemoveWallItemComposer extends OutgoingPacket<U> {
+public class RemoveWallItemComposer extends IOutgoingPacket<U> {
 
     public RemoveWallItemComposer(IWallItem wallItem, int pickupPlayerId) {
         super(OutgoingHeaders.RemoveWallItemComposer);

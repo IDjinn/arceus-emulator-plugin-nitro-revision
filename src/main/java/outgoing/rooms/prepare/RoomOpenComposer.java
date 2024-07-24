@@ -1,9 +1,9 @@
 package outgoing.rooms.prepare;
 
-import networking.packets.OutgoingPacket;
+import networking.packets.IOutgoingPacket;
 
 
-public class RoomOpenComposer extends OutgoingPacket<U> {
+public class RoomOpenComposer extends IOutgoingPacket<U> {
 
     public RoomOpenComposer() {
         super(OutgoingHeaders.RoomOpenComposer);
