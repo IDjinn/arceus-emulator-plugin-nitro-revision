@@ -3,33 +3,42 @@ package outgoing.rooms.objects.wall;
 import habbo.furniture.FurnitureUsagePolicy;
 import habbo.rooms.components.objects.items.wall.IWallItem;
 import networking.packets.IOutgoingPacket;
+import networking.packets.IPacketWriter;
+import outgoing.OutgoingHeaders;
+import packets.dto.outgoing.room.items.wall.RoomWallItemsComposerDTO;
 
 import java.util.Collection;
 import java.util.List;
 
-public class RoomWallItemsComposer extends IOutgoingPacket<U> {
-    public RoomWallItemsComposer(List<String> owners, Collection<? extends IWallItem> allItems) {
-        super(OutgoingHeaders.RoomWallItemsComposer);
-        this.appendInt(owners.size());
-        for (var i = 0; i < owners.size(); i++) {
-            this.appendInt(i);
-            this.appendString(owners.get(i));
+public class RoomWallItemsComposer implements IOutgoingPacket<RoomWallItemsComposerDTO> {
+    @Override
+    public void compose(IPacketWriter writer, RoomWallItemsComposerDTO dto) {
+        writer.appendInt(dto.owners().size());
+        for (var i = 0; i < dto.owners().size(); i++) {
+            writer.appendInt(i);
+            writer.appendString(dto.owners().get(i));
         }
 
-        this.appendInt(allItems.size());
-        for (var item : allItems) {
-            item.serializeItemIdentity(this);
-            item.serializePosition(this);
-            item.getExtraData().serializeState(this);
-            this.appendInt(-1, "expiration timeout");
-            this.appendInt(FurnitureUsagePolicy.Controller.ordinal()); // TODO:FURNITURE USAGE
+        writer.appendInt(dto.allItems().size());
+        for (var wallItem : dto.allItems()) {
+            writer.appendString(String.valueOf(wallItem.getVirtualId()));
+            writer.appendInt(wallItem.getFurniture().getSpriteId());
+            writer.appendString(wallItem.getWallPosition());
+            wallItem.getExtraData().serializeState(writer);
+            writer.appendInt(-1, "expiration timeout");
+            writer.appendInt(FurnitureUsagePolicy.Controller.ordinal()); // TODO:FURNITURE USAGE
 
-            if (item.getOwnerData() != null && item.getOwnerData().isPresent()) {
-                var owner = item.getOwnerData().get();
-                this.appendInt(owner.getId());
+            if (wallItem.getOwnerData() != null && wallItem.getOwnerData().isPresent()) {
+                var owner = wallItem.getOwnerData().get();
+                writer.appendInt(owner.getId());
             } else {
-                this.appendInt(0);
+                writer.appendInt(0);
             }
         }
+    }
+
+    @Override
+    public int getHeaderId() {
+        return OutgoingHeaders.RoomWallItemsComposer;
     }
 }

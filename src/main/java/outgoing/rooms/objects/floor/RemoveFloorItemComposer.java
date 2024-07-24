@@ -1,11 +1,11 @@
 package outgoing.rooms.objects.floor;
 
-import habbo.rooms.components.objects.items.floor.IFloorFloorItem;
+import habbo.rooms.components.objects.items.floor.IFloorItem;
 import networking.packets.IOutgoingPacket;
 
 
 public class RemoveFloorItemComposer extends IOutgoingPacket<U> {
-    public RemoveFloorItemComposer(IFloorFloorItem floorItem, int pickupPlayerId, int delay) {
+    public RemoveFloorItemComposer(IFloorItem floorItem, int pickupPlayerId, int delay) {
         super(OutgoingHeaders.RemoveFloorItemComposer);
 
         this.appendString(String.valueOf(floorItem.getVirtualId()));
@@ -14,7 +14,7 @@ public class RemoveFloorItemComposer extends IOutgoingPacket<U> {
         this.appendInt(delay);
     }
 
-    public RemoveFloorItemComposer(IFloorFloorItem floorItem, int pickupPlayerId) {
+    public RemoveFloorItemComposer(IFloorItem floorItem, int pickupPlayerId) {
         this(floorItem, pickupPlayerId, 0);
     }
 }

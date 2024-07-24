@@ -1,12 +1,12 @@
 package outgoing.rooms.objects.floor;
 
 import habbo.furniture.FurnitureUsagePolicy;
-import habbo.rooms.components.objects.items.floor.IFloorFloorItem;
+import habbo.rooms.components.objects.items.floor.IFloorItem;
 import networking.packets.IOutgoingPacket;
 
 
 public class MoveOrRotateFloorItemComposer extends IOutgoingPacket<U> {
-    public MoveOrRotateFloorItemComposer(IFloorFloorItem floorItem) {
+    public MoveOrRotateFloorItemComposer(IFloorItem floorItem) {
         super(OutgoingHeaders.FloorItemUpdateComposer);
 
         floorItem.serializeItemIdentity(this);

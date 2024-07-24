@@ -1,14 +1,14 @@
 package outgoing.rooms.objects.floor;
 
 import habbo.furniture.FurnitureUsagePolicy;
-import habbo.rooms.components.objects.items.floor.IFloorFloorItem;
+import habbo.rooms.components.objects.items.floor.IFloorItem;
 import networking.packets.IOutgoingPacket;
 
 import java.util.Collection;
 import java.util.List;
 
 public class RoomFloorItemsComposer extends IOutgoingPacket<U> {
-    public RoomFloorItemsComposer(List<String> owners, Collection<? extends IFloorFloorItem> allItems) {
+    public RoomFloorItemsComposer(List<String> owners, Collection<? extends IFloorItem> allItems) {
         super(OutgoingHeaders.RoomFloorItemsComposer);
         this.appendInt(owners.size());
         for (var i = 0; i < owners.size(); i++) {
