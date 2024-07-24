@@ -1,18 +1,24 @@
 package outgoing.navigator;
 
 import habbo.habbos.data.navigator.IHabboNavigatorWindowSettings;
+import networking.packets.IPacketWriter;
 import networking.packets.OutgoingPacket;
+import outgoing.OutgoingHeaders;
 
 
-public class NewNavigatorSettingsComposer extends OutgoingPacket<U> {
-    public NewNavigatorSettingsComposer(final IHabboNavigatorWindowSettings settings) {
-        super(OutgoingHeaders.NewNavigatorSettingsComposer);
+public class NewNavigatorSettingsComposer implements OutgoingPacket<IHabboNavigatorWindowSettings> {
+    @Override
+    public void compose(IPacketWriter writer, IHabboNavigatorWindowSettings settings) {
+        writer.appendInt(settings.getWindowX());
+        writer.appendInt(settings.getWindowY());
+        writer.appendInt(settings.getWindowWidth());
+        writer.appendInt(settings.getWindowHeight());
+        writer.appendBoolean(settings.isLeftPanelCollapsed());
+        writer.appendInt(settings.getResultsMode());
+    }
 
-        this.appendInt(settings.getWindowX());
-        this.appendInt(settings.getWindowY());
-        this.appendInt(settings.getWindowWidth());
-        this.appendInt(settings.getWindowHeight());
-        this.appendBoolean(settings.isLeftPanelCollapsed());
-        this.appendInt(settings.getResultsMode());
+    @Override
+    public int getHeaderId() {
+        return OutgoingHeaders.NewNavigatorSettingsComposer;
     }
 }

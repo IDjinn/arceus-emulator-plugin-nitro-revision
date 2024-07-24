@@ -1,59 +1,66 @@
 package outgoing.navigator;
 
+import networking.packets.IPacketDTO;
+import networking.packets.IPacketWriter;
 import networking.packets.OutgoingPacket;
+import outgoing.OutgoingHeaders;
 
 
-public class NewNavigatorCollapsedCategoriesComposer extends OutgoingPacket<U> {
-    public NewNavigatorCollapsedCategoriesComposer() {
-        super(OutgoingHeaders.NewNavigatorCollapsedCategoriesComposer);
+public class NewNavigatorCollapsedCategoriesComposer implements OutgoingPacket<IPacketDTO> {
+    @Override
+    public void compose(IPacketWriter writer, IPacketDTO dto) {
+        writer.appendInt(46);
 
-        this.appendInt(46);
+        writer.appendString("new_ads");
+        writer.appendString("friend_finding");
+        writer.appendString("staffpicks");
+        writer.appendString("with_friends");
+        writer.appendString("with_rights");
+        writer.appendString("query");
+        writer.appendString("recommended");
+        writer.appendString("my_groups");
+        writer.appendString("favorites");
+        writer.appendString("history");
+        writer.appendString("top_promotions");
+        writer.appendString("campaign_target");
+        writer.appendString("friends_rooms");
+        writer.appendString("groups");
+        writer.appendString("metadata");
+        writer.appendString("history_freq");
+        writer.appendString("highest_score");
+        writer.appendString("competition");
+        writer.appendString("category__Agencies");
+        writer.appendString("category__Role Playing");
+        writer.appendString("category__Global Chat & Discussi");
+        writer.appendString("category__GLOBAL BUILDING AND DE");
+        writer.appendString("category__global party");
+        writer.appendString("category__global games");
+        writer.appendString("category__global fansite");
+        writer.appendString("category__global help");
+        writer.appendString("category__Trading");
+        writer.appendString("category__global personal space");
+        writer.appendString("category__Habbo Life");
+        writer.appendString("category__TRADING");
+        writer.appendString("category__global official");
+        writer.appendString("category__global trade");
+        writer.appendString("category__global reviews");
+        writer.appendString("category__global bc");
+        writer.appendString("category__global personal space");
+        writer.appendString("eventcategory__Hottest Events");
+        writer.appendString("eventcategory__Parties & Music");
+        writer.appendString("eventcategory__Role Play");
+        writer.appendString("eventcategory__Help Desk");
+        writer.appendString("eventcategory__Trading");
+        writer.appendString("eventcategory__Games");
+        writer.appendString("eventcategory__Debates & Discuss");
+        writer.appendString("eventcategory__Grand Openings");
+        writer.appendString("eventcategory__Friending");
+        writer.appendString("eventcategory__Jobs");
+        writer.appendString("eventcategory__Group Events");
+    }
 
-        this.appendString("new_ads");
-        this.appendString("friend_finding");
-        this.appendString("staffpicks");
-        this.appendString("with_friends");
-        this.appendString("with_rights");
-        this.appendString("query");
-        this.appendString("recommended");
-        this.appendString("my_groups");
-        this.appendString("favorites");
-        this.appendString("history");
-        this.appendString("top_promotions");
-        this.appendString("campaign_target");
-        this.appendString("friends_rooms");
-        this.appendString("groups");
-        this.appendString("metadata");
-        this.appendString("history_freq");
-        this.appendString("highest_score");
-        this.appendString("competition");
-        this.appendString("category__Agencies");
-        this.appendString("category__Role Playing");
-        this.appendString("category__Global Chat & Discussi");
-        this.appendString("category__GLOBAL BUILDING AND DE");
-        this.appendString("category__global party");
-        this.appendString("category__global games");
-        this.appendString("category__global fansite");
-        this.appendString("category__global help");
-        this.appendString("category__Trading");
-        this.appendString("category__global personal space");
-        this.appendString("category__Habbo Life");
-        this.appendString("category__TRADING");
-        this.appendString("category__global official");
-        this.appendString("category__global trade");
-        this.appendString("category__global reviews");
-        this.appendString("category__global bc");
-        this.appendString("category__global personal space");
-        this.appendString("eventcategory__Hottest Events");
-        this.appendString("eventcategory__Parties & Music");
-        this.appendString("eventcategory__Role Play");
-        this.appendString("eventcategory__Help Desk");
-        this.appendString("eventcategory__Trading");
-        this.appendString("eventcategory__Games");
-        this.appendString("eventcategory__Debates & Discuss");
-        this.appendString("eventcategory__Grand Openings");
-        this.appendString("eventcategory__Friending");
-        this.appendString("eventcategory__Jobs");
-        this.appendString("eventcategory__Group Events");
+    @Override
+    public int getHeaderId() {
+        return OutgoingHeaders.NewNavigatorCollapsedCategoriesComposer;
     }
 }

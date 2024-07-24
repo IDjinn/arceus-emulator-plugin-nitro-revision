@@ -2,33 +2,29 @@ package outgoing.navigator;
 
 import habbo.habbos.data.IHabboNavigator;
 import habbo.habbos.data.navigator.IHabboNavigatorSearch;
+import networking.packets.IPacketWriter;
 import networking.packets.OutgoingPacket;
+import outgoing.OutgoingHeaders;
+import packets.dto.outgoing.navigator.NewNavigatorMetaDataComposerDTO;
 
 import java.util.List;
 
-public class NewNavigatorMetaDataComposer extends OutgoingPacket<U> {
-    private final String[] tabs = {
-            "official_view",
-            "hotel_view",
-            "roomads_view",
-            "myworld_view"
-    };
+public class NewNavigatorMetaDataComposer implements OutgoingPacket<NewNavigatorMetaDataComposerDTO> {
+    @Override
+    public void compose(IPacketWriter writer, NewNavigatorMetaDataComposerDTO dto) {
+        writer.appendInt(NewNavigatorMetaDataComposerDTO.tabs.length);
+        for (String tabName : NewNavigatorMetaDataComposerDTO.tabs) {
+            writer.appendString(tabName);
 
-    public NewNavigatorMetaDataComposer(final IHabboNavigator navigator) {
-        super(OutgoingHeaders.NewNavigatorMetaDataComposer);
-
-        this.appendInt(this.tabs.length);
-
-        for (String tabName : this.tabs) {
-            this.appendString(tabName);
-
-            final List<IHabboNavigatorSearch> savedSearches = navigator.getNavigatorSearchForTab(tabName);
-
-            this.appendInt(savedSearches.size());
-
-            for (final IHabboNavigatorSearch search : savedSearches) {
+            writer.appendInt(dto.savedSearches().size());
+            for (final IHabboNavigatorSearch search : dto.savedSearches()) {
                 search.write(this);
             }
         }
+    }
+
+    @Override
+    public int getHeaderId() {
+        return OutgoingHeaders.NewNavigatorMetaDataComposer;
     }
 }
