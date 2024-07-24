@@ -1,13 +1,13 @@
 package outgoing.session.hotel;
 
+import networking.packets.IPacketWriter;
 import networking.packets.OutgoingPacket;
-import networking.packets.PacketDTO;
-import networking.packets.PacketWriter;
+import networking.packets.IPacketDTO;
 import outgoing.OutgoingHeaders;
 
-public class AvailabilityStatusMessageComposer implements OutgoingPacket<PacketDTO> {
+public class AvailabilityStatusMessageComposer implements OutgoingPacket<IPacketDTO> {
     @Override
-    public void compose(PacketWriter writer, PacketDTO dto) {
+    public void compose(IPacketWriter writer, IPacketDTO dto) {
         writer.appendBoolean(true);
         writer.appendBoolean(false);
         writer.appendBoolean(true);

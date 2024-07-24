@@ -1,14 +1,14 @@
 package outgoing.session.wardobe;
 
+import networking.packets.IPacketWriter;
 import networking.packets.OutgoingPacket;
-import networking.packets.PacketDTO;
-import networking.packets.PacketWriter;
+import networking.packets.IPacketDTO;
 import outgoing.OutgoingHeaders;
 
 
-public class UserClothesComposer implements OutgoingPacket<PacketDTO> {
+public class UserClothesComposer implements OutgoingPacket<IPacketDTO> {
     @Override
-    public void compose(PacketWriter writer, PacketDTO dto) {
+    public void compose(IPacketWriter writer, IPacketDTO dto) {
         writer.appendInt(0);
         writer.appendInt(0);
     }

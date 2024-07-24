@@ -1,13 +1,13 @@
 package outgoing;
 
 
+import networking.packets.IPacketWriter;
 import networking.packets.OutgoingPacket;
-import networking.packets.PacketDTO;
-import networking.packets.PacketWriter;
+import networking.packets.IPacketDTO;
 
-public class PingComposer implements OutgoingPacket<PacketDTO> {
+public class PingComposer implements OutgoingPacket<IPacketDTO> {
     @Override
-    public void compose(PacketWriter writer, PacketDTO dto) {
+    public void compose(IPacketWriter writer, IPacketDTO dto) {
         
     }
 

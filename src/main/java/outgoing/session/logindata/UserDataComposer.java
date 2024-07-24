@@ -1,14 +1,14 @@
 package outgoing.session.logindata;
 
+import networking.packets.IPacketWriter;
 import networking.packets.OutgoingPacket;
-import networking.packets.PacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.session.logindata.UserDataDTO;
 
 
 public class UserDataComposer implements OutgoingPacket<UserDataDTO> {
     @Override
-    public void compose(final PacketWriter writer, final UserDataDTO dto) {
+    public void compose(final IPacketWriter writer, final UserDataDTO dto) {
         final var habbo = dto.habbo();
 
         writer.appendInt(habbo.getData().getId());

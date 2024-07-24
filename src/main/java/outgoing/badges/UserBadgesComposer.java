@@ -1,31 +1,24 @@
 package outgoing.badges;
 
-import habbo.habbos.data.badges.IHabboBadge;
+import networking.packets.IPacketWriter;
 import networking.packets.OutgoingPacket;
+import outgoing.OutgoingHeaders;
+import packets.dto.outgoing.badges.UserBadgesDTO;
 
-import java.util.Map;
-
-public class UserBadgesComposer extends OutgoingPacket<U> {
-    public UserBadgesComposer(final Map<Integer, String> profileBadges, int userId) {
-        super(OutgoingHeaders.UserBadgesComposer);
-        this.appendInt(userId);
-        profileBadges.forEach((slot, code) -> {
-            this.appendInt(slot);
-            this.appendString(code);
-        });
-    }
-
-    public UserBadgesComposer(final int userId, final Map<Integer, IHabboBadge> profileBadges) {
-        super(OutgoingHeaders.UserBadgesComposer);
-        this.appendInt(userId);
-        UserBadgesComposer.serialize(this, profileBadges);
-    }
-
-    public static void serialize(final OutgoingPacket<U> packet, final Map<Integer, IHabboBadge> profileBadges) {
-        packet.appendInt(profileBadges.size());
-        for (IHabboBadge badge : profileBadges.values()) {
-            packet.appendInt(badge.getSlot().orElse(0));
-            packet.appendString(badge.getCode());
+public class UserBadgesComposer implements OutgoingPacket<UserBadgesDTO> {
+    @Override
+    public void compose(IPacketWriter writer, UserBadgesDTO dto) {
+        writer.appendInt(dto.userId());
+        for (final var entry : dto.badges().entrySet()) {
+            final var slot = entry.getKey();
+            final var code = entry.getValue();
+            writer.appendInt(slot);
+            writer.appendString(code);
         }
+    }
+
+    @Override
+    public int getHeaderId() {
+        return OutgoingHeaders.UserBadgesComposer;
     }
 }

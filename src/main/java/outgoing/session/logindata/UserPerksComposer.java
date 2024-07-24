@@ -1,15 +1,14 @@
 package outgoing.session.logindata;
 
-import habbo.habbos.IHabbo;
+import networking.packets.IPacketWriter;
 import networking.packets.OutgoingPacket;
-import networking.packets.PacketDTO;
-import networking.packets.PacketWriter;
+import networking.packets.IPacketDTO;
 import outgoing.OutgoingHeaders;
 
 
-public class UserPerksComposer implements OutgoingPacket<PacketDTO> {
+public class UserPerksComposer implements OutgoingPacket<IPacketDTO> {
     @Override
-    public void compose(PacketWriter writer, PacketDTO dto) {
+    public void compose(IPacketWriter writer, IPacketDTO dto) {
         writer.appendInt(15);
 
         writer.appendString("USE_GUIDE_TOOL");
