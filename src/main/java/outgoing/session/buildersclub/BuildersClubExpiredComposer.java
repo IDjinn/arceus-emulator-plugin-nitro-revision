@@ -1,15 +1,23 @@
 package outgoing.session.buildersclub;
 
 import networking.packets.OutgoingPacket;
+import networking.packets.PacketDTO;
+import networking.packets.PacketWriter;
+import outgoing.OutgoingHeaders;
 
 
-public class BuildersClubExpiredComposer extends OutgoingPacket<U> {
-    public BuildersClubExpiredComposer() {
-        super(OutgoingHeaders.BuildersClubExpiredComposer);
-        this.appendInt(Integer.MAX_VALUE);
-        this.appendInt(0);
-        this.appendInt(100);
-        this.appendInt(Integer.MAX_VALUE);
-        this.appendInt(0);
+public class BuildersClubExpiredComposer implements OutgoingPacket<PacketDTO> {
+    @Override
+    public void compose(PacketWriter writer, PacketDTO dto) {
+        writer.appendInt(Integer.MAX_VALUE);
+        writer.appendInt(0);
+        writer.appendInt(100);
+        writer.appendInt(Integer.MAX_VALUE);
+        writer.appendInt(0);
+    }
+
+    @Override
+    public int getHeaderId() {
+        return OutgoingHeaders.BuildersClubExpiredComposer;
     }
 }

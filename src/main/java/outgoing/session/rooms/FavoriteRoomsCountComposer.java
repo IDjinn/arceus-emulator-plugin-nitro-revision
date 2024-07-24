@@ -1,12 +1,20 @@
 package outgoing.session.rooms;
 
 import networking.packets.OutgoingPacket;
+import networking.packets.PacketDTO;
+import networking.packets.PacketWriter;
+import outgoing.OutgoingHeaders;
 
 
-public class FavoriteRoomsCountComposer extends OutgoingPacket<U> {
-    public FavoriteRoomsCountComposer() {
-        super(OutgoingHeaders.FavoriteRoomsCountComposer);
-        this.appendInt(30);
-        this.appendInt(0);
+public class FavoriteRoomsCountComposer implements OutgoingPacket<PacketDTO> {
+    @Override
+    public void compose(PacketWriter writer, PacketDTO dto) {
+        writer.appendInt(30);
+        writer.appendInt(0);
+    }
+
+    @Override
+    public int getHeaderId() {
+        return OutgoingHeaders.FavoriteRoomsCountComposer;
     }
 }

@@ -1,11 +1,19 @@
 package outgoing.session.logindata;
 
 import networking.packets.OutgoingPacket;
+import networking.packets.PacketDTO;
+import networking.packets.PacketWriter;
+import outgoing.OutgoingHeaders;
 
 
-public class UserEffectsListComposer extends OutgoingPacket<U> {
-    public UserEffectsListComposer() {
-        super(OutgoingHeaders.UserEffectsListComposer);
-        this.appendInt(0);
+public class UserEffectsListComposer implements OutgoingPacket<PacketDTO> {
+    @Override
+    public void compose(PacketWriter writer, PacketDTO dto) {
+        writer.appendInt(0);
+    }
+
+    @Override
+    public int getHeaderId() {
+        return OutgoingHeaders.UserEffectsListComposer;
     }
 }

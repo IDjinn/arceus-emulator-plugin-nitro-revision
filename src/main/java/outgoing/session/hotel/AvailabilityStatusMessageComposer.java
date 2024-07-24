@@ -15,6 +15,6 @@ public class AvailabilityStatusMessageComposer implements OutgoingPacket<PacketD
 
     @Override
     public int getHeaderId() {
-        return OutgoingHeaders.AvailabilityStatusMessageComposer);
+        return OutgoingHeaders.AvailabilityStatusMessageComposer;
     }
 }
