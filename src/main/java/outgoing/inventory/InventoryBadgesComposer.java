@@ -1,21 +1,31 @@
 package outgoing.inventory;
 
 import habbo.habbos.data.badges.IHabboBadge;
+import networking.packets.IPacketWriter;
 import networking.packets.OutgoingPacket;
+import outgoing.OutgoingHeaders;
+import packets.dto.outgoing.inventory.InventoryBadgesComposerDTO;
 import packets.outgoing.badges.UserBadgesComposer;
 
 import java.util.Map;
 
-public class InventoryBadgesComposer extends OutgoingPacket<U> {
-    public InventoryBadgesComposer(Map<String, IHabboBadge> badges, Map<Integer, IHabboBadge> profileBadges) {
-        super(OutgoingHeaders.InventoryBadgesComposer);
-
-        this.appendInt(badges.size());
-        for (IHabboBadge badge : badges.values()) {
-            this.appendInt(badge.getSlot().orElse(0));
-            this.appendString(badge.getCode());
+public class InventoryBadgesComposer implements OutgoingPacket<InventoryBadgesComposerDTO> {
+    @Override
+    public void compose(IPacketWriter writer, InventoryBadgesComposerDTO dto) {
+        writer.appendInt(dto.badges().size());
+        for (IHabboBadge badge : dto.badges().values()) {
+            writer.appendInt(badge.getSlot().orElse(0));
+            writer.appendString(badge.getCode());
         }
+        
+        for (final var badge : dto.profileBadges().values()) {
+            writer.appendInt(badge.getSlot().orElse(0));
+            writer.appendString(badge.getCode());
+        }
+    }
 
-        UserBadgesComposer.serialize(this, profileBadges);
+    @Override
+    public int getHeaderId() {
+        return OutgoingHeaders.InventoryBadgesComposer;
     }
 }
