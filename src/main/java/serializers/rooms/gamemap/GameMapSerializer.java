@@ -1,9 +1,10 @@
 package serializers.rooms.gamemap;
 
 import habbo.rooms.components.gamemap.IRoomTile;
+import networking.packets.IPacketSerializer;
 import networking.packets.IPacketWriter;
 
-public class GameMapSerializer {
+public class GameMapSerializer implements IPacketSerializer<IRoomTile> {
     private static final int STACKING_BLOCKED_FLAG = 0x4000;
     private static final int ENCODE_HEIGHT_FLAG = 0x0100;
     private static final int HEIGHT_FLAG = 0x4000;
@@ -12,12 +13,13 @@ public class GameMapSerializer {
         return (int) (height * ENCODE_HEIGHT_FLAG);
     }
 
-    public void serializeTileHeight(final IPacketWriter packet, final IRoomTile tile) {
+    @Override
+    public void serialize(IPacketWriter writer, IRoomTile tile) {
         final var relativeMapHeight = tile.getRelativeMapHeight();
         if (relativeMapHeight.isPresent()) {
-            packet.appendShort(encodeTileHeight(relativeMapHeight.get()));
+            writer.appendShort(encodeTileHeight(relativeMapHeight.get()));
         } else {
-            packet.appendShort(tile.getZ() | STACKING_BLOCKED_FLAG);
+            writer.appendShort(tile.getZ() | STACKING_BLOCKED_FLAG);
         }
     }
 }
