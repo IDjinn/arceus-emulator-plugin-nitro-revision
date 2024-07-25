@@ -8,7 +8,7 @@ import networking.packets.incoming.IIncomingPacket;
 import incoming.IncomingEvent;
 import org.jetbrains.annotations.Nullable;
 import packets.incoming.IncomingHeaders;
-import packets.outgoing.rooms.prepare.HotelViewComposer;
+import packets.outgoing.rooms.session.HotelViewComposer;
 
 @Singleton
 public class RequestRoomLoadEvent extends IncomingEvent {

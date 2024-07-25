@@ -1,15 +1,14 @@
 package outgoing.catalog;
 
-import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
-import packets.dto.outgoing.catalog.PurchaseOkComposerDTO;
-import packets.outgoing.catalog.IPurchaseOkComposer;
+import packets.dto.outgoing.catalog.CatalogPurchaseOkComposerDTO;
+import packets.outgoing.catalog.ICatalogPurchaseOKComposer;
 
 
-public class PurchaseOkComposer implements IPurchaseOkComposer {
+public class CatalogPurchaseOKComposer implements ICatalogPurchaseOKComposer {
     @Override
-    public void compose(IPacketWriter writer, PurchaseOkComposerDTO dto) {
+    public void compose(IPacketWriter writer, CatalogPurchaseOkComposerDTO dto) {
         final var item = dto.catalogItem();
         writer.appendInt(item.getId());
         writer.appendString(item.getFurniture().getItemName());

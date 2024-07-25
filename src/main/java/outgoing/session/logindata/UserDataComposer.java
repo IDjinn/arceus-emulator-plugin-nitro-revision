@@ -1,6 +1,5 @@
 package outgoing.session.logindata;
 
-import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.session.logindata.UserDataDTO;

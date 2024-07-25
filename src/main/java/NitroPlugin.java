@@ -7,7 +7,6 @@ import incoming.AutoBindIncomingEventsModule;
 import incoming.IncomingEvent;
 import incoming.IncomingEventAsListProvider;
 import networking.packets.incoming.IIncomingEvent;
-import networking.packets.outgoing.IOutgoingDTOSerializer;
 import org.apache.maven.artifact.versioning.ComparableVersion;
 import outgoing.AutoBindOutgoingEventsModule;
 import outgoing.OutgoingEventAsListProvider;

@@ -1,7 +1,6 @@
 package outgoing.rooms.entities.variables;
 
 import habbo.variables.IVariable;
-import networking.packets.outgoing.IOutgoingDTOSerializer;
 
 import java.util.Map;
 

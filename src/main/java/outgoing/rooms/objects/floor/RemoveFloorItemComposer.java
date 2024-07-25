@@ -1,6 +1,5 @@
 package outgoing.rooms.objects.floor;
 
-import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.room.items.floor.RemoveFloorItemComposerDTO;

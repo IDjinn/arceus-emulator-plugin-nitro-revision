@@ -1,7 +1,6 @@
 package outgoing.rooms.entities.chat;
 
 import habbo.rooms.entities.IRoomEntity;
-import networking.packets.outgoing.IOutgoingDTOSerializer;
 
 import java.util.Collections;
 import java.util.Set;

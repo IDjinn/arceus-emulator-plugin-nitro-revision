@@ -1,6 +1,5 @@
 package outgoing.session.buildersclub;
 
-import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketDTO;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;

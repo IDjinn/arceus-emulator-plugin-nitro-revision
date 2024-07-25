@@ -1,14 +1,13 @@
 package outgoing.badges;
 
-import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
-import packets.dto.outgoing.badges.UserBadgesDTO;
+import packets.dto.outgoing.badges.UserBadgesComposerDTO;
 import packets.outgoing.badges.IUserBadgesComposer;
 
 public class UserBadgesComposer implements IUserBadgesComposer {
     @Override
-    public void compose(IPacketWriter writer, UserBadgesDTO dto) {
+    public void compose(IPacketWriter writer, UserBadgesComposerDTO dto) {
         writer.appendInt(dto.userId());
         for (final var entry : dto.badges().entrySet()) {
             final var slot = entry.getKey();

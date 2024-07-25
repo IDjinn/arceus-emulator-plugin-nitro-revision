@@ -1,7 +1,6 @@
 package outgoing;
 
 import com.google.inject.Provider;
-import networking.packets.outgoing.IOutgoingDTOSerializer;
 import org.reflections.Reflections;
 import packets.PacketManager;
 

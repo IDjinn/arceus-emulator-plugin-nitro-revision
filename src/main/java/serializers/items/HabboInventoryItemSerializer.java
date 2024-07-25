@@ -3,9 +3,8 @@ package serializers.items;
 import habbo.furniture.FurnitureType;
 import habbo.habbos.inventory.IHabboInventoryItem;
 import networking.packets.IPacketWriter;
-import networking.packets.outgoing.IOutgoingEvent;
 
-public class HabboInventoryItemSerializer implements networking.packets.outgoing.IOutgoingDTOSerializer<IHabboInventoryItem> {
+public class HabboInventoryItemSerializer {
     @Override
     public void serialize(IPacketWriter writer, IHabboInventoryItem dto) {
         writer.appendInt(dto.getId())

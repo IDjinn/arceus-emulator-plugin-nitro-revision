@@ -2,7 +2,6 @@ package outgoing.rooms.entities.chat;
 
 import habbo.commands.ICommand;
 import habbo.internationalization.IInternationalizationManager;
-import networking.packets.outgoing.IOutgoingDTOSerializer;
 
 import java.util.List;
 import java.util.Locale;

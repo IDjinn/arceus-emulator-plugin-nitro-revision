@@ -1,7 +1,6 @@
 package outgoing.catalog;
 
 import habbo.catalog.pages.ICatalogPage;
-import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.catalog.CatalogIndexComposerDTO;

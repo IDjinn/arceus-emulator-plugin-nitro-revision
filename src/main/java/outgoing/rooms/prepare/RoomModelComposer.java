@@ -1,10 +1,9 @@
 package outgoing.rooms.prepare;
 
-import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.room.data.RoomModelComposerDTO;
-import packets.outgoing.rooms.prepare.IRoomModelComposer;
+import packets.outgoing.rooms.data.IRoomModelComposer;
 
 
 public class RoomModelComposer implements  IRoomModelComposer {

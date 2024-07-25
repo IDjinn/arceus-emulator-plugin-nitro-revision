@@ -1,11 +1,10 @@
 package outgoing.rooms.prepare;
 
 import com.google.inject.Inject;
-import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.room.data.RoomDataComposerDTO;
-import packets.outgoing.rooms.prepare.IRoomDataComposer;
+import packets.outgoing.rooms.data.IRoomDataComposer;
 import serializers.rooms.RoomSerializer;
 
 

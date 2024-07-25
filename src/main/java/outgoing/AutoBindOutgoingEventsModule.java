@@ -1,7 +1,6 @@
 package outgoing;
 
 import com.google.inject.AbstractModule;
-import networking.packets.outgoing.IOutgoingDTOSerializer;
 import org.reflections.Reflections;
 
 import java.lang.reflect.Modifier;

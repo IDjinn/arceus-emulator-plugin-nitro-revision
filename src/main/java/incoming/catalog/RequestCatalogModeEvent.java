@@ -6,7 +6,6 @@ import habbo.catalog.ICatalogManager;
 import networking.client.IClient;
 import networking.packets.incoming.IIncomingPacket;
 import incoming.IncomingEvent;
-import networking.packets.outgoing.IOutgoingDTOSerializer;
 import packets.incoming.IncomingHeaders;
 import packets.outgoing.catalog.CatalogIndexComposer;
 

@@ -1,7 +1,6 @@
 package outgoing.catalog;
 
 import com.google.inject.Inject;
-import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.outgoing.catalog.ICatalogPageComposer;

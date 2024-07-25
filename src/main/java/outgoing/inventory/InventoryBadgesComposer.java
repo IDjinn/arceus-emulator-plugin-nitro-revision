@@ -1,7 +1,5 @@
 package outgoing.inventory;
 
-import habbo.habbos.data.badges.IHabboBadge;
-import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.inventory.InventoryBadgesComposerDTO;

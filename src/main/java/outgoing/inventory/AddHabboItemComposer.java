@@ -1,6 +1,5 @@
 package outgoing.inventory;
 
-import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.inventory.AddHabboItemComposerDTO;

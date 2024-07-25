@@ -1,7 +1,6 @@
 package outgoing.navigator;
 
 import habbo.habbos.data.navigator.IHabboNavigatorWindowSettings;
-import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.outgoing.navigator.INewNavigatorSettingsComposer;

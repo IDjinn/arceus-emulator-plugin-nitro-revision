@@ -1,10 +1,9 @@
 package outgoing.rooms.prepare;
 
-import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.room.data.RoomPaintComposerDTO;
-import packets.outgoing.rooms.prepare.IRoomPaintComposer;
+import packets.outgoing.rooms.data.IRoomPaintComposer;
 
 
 public class RoomPaintComposer implements  IRoomPaintComposer {

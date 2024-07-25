@@ -1,10 +1,9 @@
 package outgoing.rooms.prepare;
 
-import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketDTO;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
-import packets.outgoing.rooms.prepare.IRoomScoreComposer;
+import packets.outgoing.rooms.data.IRoomScoreComposer;
 
 
 public class RoomScoreComposer implements  IRoomScoreComposer {
