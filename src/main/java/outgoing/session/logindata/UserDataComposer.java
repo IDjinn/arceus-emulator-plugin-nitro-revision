@@ -7,7 +7,7 @@ import packets.dto.outgoing.session.logindata.UserDataDTO;
 import packets.outgoing.session.logindata.IUserDataComposer;
 
 
-public class UserDataComposer implements IOutgoingDTOSerializer<UserDataDTO>, IUserDataComposer {
+public class UserDataComposer implements  IUserDataComposer {
     @Override
     public void compose(final IPacketWriter writer, final UserDataDTO dto) {
         final var habbo = dto.habbo();

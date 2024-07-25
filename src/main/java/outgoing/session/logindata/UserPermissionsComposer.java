@@ -7,7 +7,7 @@ import outgoing.OutgoingHeaders;
 import packets.outgoing.session.logindata.IUserPermissionsComposer;
 
 
-public class UserPermissionsComposer implements IOutgoingDTOSerializer<IPacketDTO>, IUserPermissionsComposer {
+public class UserPermissionsComposer implements  IUserPermissionsComposer {
     @Override
     public void compose(IPacketWriter writer, IPacketDTO dto) {
         writer.appendInt(2);

@@ -7,7 +7,7 @@ import outgoing.OutgoingHeaders;
 import packets.outgoing.rooms.prepare.IHideDoorbellComposer;
 
 
-public class HideDoorbellComposer implements IOutgoingDTOSerializer<IPacketDTO>, IHideDoorbellComposer {
+public class HideDoorbellComposer implements  IHideDoorbellComposer {
     @Override
     public void compose(IPacketWriter writer, IPacketDTO dto) {
     }

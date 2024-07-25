@@ -7,7 +7,7 @@ import outgoing.OutgoingHeaders;
 import packets.outgoing.session.calendar.IAdventCalendarDataComposer;
 
 
-public class AdventCalendarDataComposer implements IOutgoingDTOSerializer<IPacketDTO>, IAdventCalendarDataComposer {
+public class AdventCalendarDataComposer implements  IAdventCalendarDataComposer {
     @Override
     public void compose(IPacketWriter writer, IPacketDTO dto) {
         writer.appendString("xmas14");

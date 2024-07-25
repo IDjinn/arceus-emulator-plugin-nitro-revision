@@ -7,7 +7,7 @@ import outgoing.OutgoingHeaders;
 import packets.outgoing.rooms.prepare.IRoomPromotionMessageComposer;
 
 
-public class RoomPromotionMessageComposer implements IOutgoingDTOSerializer<IPacketDTO>, IRoomPromotionMessageComposer {
+public class RoomPromotionMessageComposer implements  IRoomPromotionMessageComposer {
     @Override
     public void compose(IPacketWriter writer, IPacketDTO dto) {
         writer.appendInt(-1);

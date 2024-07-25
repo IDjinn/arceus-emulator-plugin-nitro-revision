@@ -7,7 +7,7 @@ import outgoing.OutgoingHeaders;
 import packets.outgoing.navigator.ICanCreateRoomComposer;
 
 
-public class CanCreateRoomComposer implements IOutgoingDTOSerializer<IPacketDTO>, ICanCreateRoomComposer {
+public class CanCreateRoomComposer implements  ICanCreateRoomComposer {
     @Override
     public void compose(IPacketWriter writer, IPacketDTO dto) {
         writer.appendInt(0); // 0 = can create room, 1 = room limit reached

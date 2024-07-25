@@ -7,7 +7,7 @@ import packets.dto.outgoing.room.data.RoomPaintComposerDTO;
 import packets.outgoing.rooms.prepare.IRoomPaintComposer;
 
 
-public class RoomPaintComposer implements IOutgoingDTOSerializer<RoomPaintComposerDTO>, IRoomPaintComposer {
+public class RoomPaintComposer implements  IRoomPaintComposer {
     @Override
     public void compose(IPacketWriter writer, RoomPaintComposerDTO dto) {
         writer.appendString(dto.type());

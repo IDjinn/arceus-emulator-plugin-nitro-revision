@@ -6,7 +6,7 @@ import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.navigator.NewNavigatorSavedSearchesComposerDTO;
 import packets.outgoing.navigator.INewNavigatorSavedSearchesComposer;
 
-public class NewNavigatorSavedSearchesComposer implements IOutgoingDTOSerializer<NewNavigatorSavedSearchesComposerDTO>, INewNavigatorSavedSearchesComposer {
+public class NewNavigatorSavedSearchesComposer implements  INewNavigatorSavedSearchesComposer {
     @Override
     public void compose(IPacketWriter writer, NewNavigatorSavedSearchesComposerDTO dto) {
         writer.appendInt(dto.searches().size());

@@ -7,7 +7,7 @@ import outgoing.OutgoingHeaders;
 import packets.outgoing.guest.ISecureLoginOkComposer;
 
 
-public class SecureLoginOkComposer implements IOutgoingDTOSerializer<IPacketDTO>, ISecureLoginOkComposer {
+public class SecureLoginOkComposer implements ISecureLoginOkComposer {
     @Override
     public void compose(IPacketWriter writer, IPacketDTO dto) {
     }

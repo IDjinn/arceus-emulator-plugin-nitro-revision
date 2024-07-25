@@ -7,7 +7,7 @@ import outgoing.OutgoingHeaders;
 import packets.outgoing.navigator.INewNavigatorCollapsedCategoriesComposer;
 
 
-public class NewNavigatorCollapsedCategoriesComposer implements IOutgoingDTOSerializer<IPacketDTO>, INewNavigatorCollapsedCategoriesComposer {
+public class NewNavigatorCollapsedCategoriesComposer implements  INewNavigatorCollapsedCategoriesComposer {
     @Override
     public void compose(IPacketWriter writer, IPacketDTO dto) {
         writer.appendInt(46);

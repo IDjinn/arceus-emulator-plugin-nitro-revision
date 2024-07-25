@@ -7,7 +7,7 @@ import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.navigator.NewNavigatorMetaDataComposerDTO;
 import packets.outgoing.navigator.INewNavigatorMetaDataComposer;
 
-public class NewNavigatorMetaDataComposer implements IOutgoingDTOSerializer<NewNavigatorMetaDataComposerDTO>, INewNavigatorMetaDataComposer {
+public class NewNavigatorMetaDataComposer implements  INewNavigatorMetaDataComposer {
     @Override
     public void compose(IPacketWriter writer, NewNavigatorMetaDataComposerDTO dto) {
         writer.appendInt(NewNavigatorMetaDataComposerDTO.tabs.length);

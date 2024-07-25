@@ -9,7 +9,7 @@ import packets.outgoing.rooms.objects.floor.IRoomFloorItemsComposer;
 import serializers.items.FloorItemSerializer;
 import serializers.items.OwnerItemListSerializer;
 
-public class RoomFloorItemsComposer implements IOutgoingDTOSerializer<RoomFloorItemsComposerDTO>, IRoomFloorItemsComposer {
+public class RoomFloorItemsComposer implements  IRoomFloorItemsComposer {
     private @Inject FloorItemSerializer floorItemSerializer;
     private @Inject OwnerItemListSerializer ownerItemListSerializer;
 

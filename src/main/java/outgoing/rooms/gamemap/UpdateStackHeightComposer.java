@@ -8,7 +8,7 @@ import packets.dto.outgoing.room.gamemap.UpdateStackHeightComposerDTO;
 import packets.outgoing.rooms.gamemap.IUpdateStackHeightComposer;
 import serializers.rooms.gamemap.GameMapSerializer;
 
-public class UpdateStackHeightComposer implements IOutgoingDTOSerializer<UpdateStackHeightComposerDTO>, IUpdateStackHeightComposer {
+public class UpdateStackHeightComposer implements  IUpdateStackHeightComposer {
     private @Inject GameMapSerializer gameMapSerializer;
     @Override
     public void compose(IPacketWriter writer, UpdateStackHeightComposerDTO dto) {

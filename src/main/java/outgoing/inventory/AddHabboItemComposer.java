@@ -6,7 +6,7 @@ import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.inventory.AddHabboItemComposerDTO;
 import packets.outgoing.inventory.IAddHabboItemComposer;
 
-public class AddHabboItemComposer implements IOutgoingDTOSerializer<AddHabboItemComposerDTO>, IAddHabboItemComposer {
+public class AddHabboItemComposer implements IAddHabboItemComposer {
     @Override
     public void compose(IPacketWriter writer, AddHabboItemComposerDTO dto) {
         writer.appendInt(1, "total unseen categories");

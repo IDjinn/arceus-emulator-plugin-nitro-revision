@@ -6,7 +6,7 @@ import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.inventory.InventoryItemsComposerDTO;
 import packets.outgoing.inventory.IInventoryItemsComposer;
 
-public class InventoryItemsComposer implements IOutgoingDTOSerializer<InventoryItemsComposerDTO>, IInventoryItemsComposer {
+public class InventoryItemsComposer implements  IInventoryItemsComposer {
     @Override
     public void compose(IPacketWriter writer, InventoryItemsComposerDTO dto) {
         writer.appendInt(dto.fragment());

@@ -7,7 +7,7 @@ import outgoing.OutgoingHeaders;
 import packets.outgoing.rooms.prepare.IHotelViewComposer;
 
 
-public class HotelViewComposer implements IOutgoingDTOSerializer<IPacketDTO>, IHotelViewComposer {
+public class HotelViewComposer implements  IHotelViewComposer {
     @Override
     public void compose(IPacketWriter writer, IPacketDTO dto) {
     }

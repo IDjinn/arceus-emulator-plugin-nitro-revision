@@ -7,7 +7,7 @@ import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.outgoing.session.logindata.IIsFirstLoginOfDayComposer;
 
-public class IsFirstLoginOfDayComposer implements IOutgoingDTOSerializer<IPacketDTO>, IIsFirstLoginOfDayComposer {
+public class IsFirstLoginOfDayComposer implements  IIsFirstLoginOfDayComposer {
     @Override
     public void compose(final IPacketWriter writer, final IPacketDTO dto) {
         writer.appendBoolean(true);

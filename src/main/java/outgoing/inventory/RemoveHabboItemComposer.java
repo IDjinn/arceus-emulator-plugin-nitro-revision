@@ -7,7 +7,7 @@ import packets.dto.outgoing.inventory.RemoveHabboItemComposerDTO;
 import packets.outgoing.inventory.IRemoveHabboItemComposer;
 
 
-public class RemoveHabboItemComposer implements IOutgoingDTOSerializer<RemoveHabboItemComposerDTO>, IRemoveHabboItemComposer {
+public class RemoveHabboItemComposer implements  IRemoveHabboItemComposer {
     @Override
     public void compose(IPacketWriter writer, RemoveHabboItemComposerDTO dto) {
         writer.appendInt(dto.itemId());

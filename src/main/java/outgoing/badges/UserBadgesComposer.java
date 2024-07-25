@@ -6,7 +6,7 @@ import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.badges.UserBadgesDTO;
 import packets.outgoing.badges.IUserBadgesComposer;
 
-public class UserBadgesComposer implements IOutgoingDTOSerializer<UserBadgesDTO>, IUserBadgesComposer {
+public class UserBadgesComposer implements IUserBadgesComposer {
     @Override
     public void compose(IPacketWriter writer, UserBadgesDTO dto) {
         writer.appendInt(dto.userId());

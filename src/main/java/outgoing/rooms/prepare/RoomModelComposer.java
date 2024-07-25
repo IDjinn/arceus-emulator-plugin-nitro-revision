@@ -7,7 +7,7 @@ import packets.dto.outgoing.room.data.RoomModelComposerDTO;
 import packets.outgoing.rooms.prepare.IRoomModelComposer;
 
 
-public class RoomModelComposer implements IOutgoingDTOSerializer<RoomModelComposerDTO>, IRoomModelComposer {
+public class RoomModelComposer implements  IRoomModelComposer {
     @Override
     public void compose(IPacketWriter writer, RoomModelComposerDTO dto) {
         writer.appendString(dto.modelName());

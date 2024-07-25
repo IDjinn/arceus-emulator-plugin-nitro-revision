@@ -7,7 +7,7 @@ import packets.dto.outgoing.purse.UserCurrencyComposerDTO;
 import packets.outgoing.purse.IUserCurrencyComposer;
 
 
-public class UserCurrencyComposer implements IOutgoingDTOSerializer<UserCurrencyComposerDTO>, IUserCurrencyComposer {
+public class UserCurrencyComposer implements  IUserCurrencyComposer {
     @Override
     public void compose(IPacketWriter writer, UserCurrencyComposerDTO dto) {
         writer.appendInt(dto.currencies().size());

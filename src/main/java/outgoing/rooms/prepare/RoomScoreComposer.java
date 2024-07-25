@@ -7,7 +7,7 @@ import outgoing.OutgoingHeaders;
 import packets.outgoing.rooms.prepare.IRoomScoreComposer;
 
 
-public class RoomScoreComposer implements IOutgoingDTOSerializer<IPacketDTO>, IRoomScoreComposer {
+public class RoomScoreComposer implements  IRoomScoreComposer {
     @Override
     public void compose(IPacketWriter writer, IPacketDTO dto) {
         writer.appendInt(0, "score");

@@ -9,7 +9,7 @@ import packets.outgoing.rooms.gamemap.IRoomRelativeMapComposer;
 import serializers.rooms.gamemap.GameMapSerializer;
 
 
-public class RoomRelativeMapComposer implements IOutgoingDTOSerializer<RoomHeightMapComposerDTO>, IRoomRelativeMapComposer {
+public class RoomRelativeMapComposer implements  IRoomRelativeMapComposer {
     private @Inject GameMapSerializer gameMapSerializer;
     @Override
     public void compose(IPacketWriter writer, RoomHeightMapComposerDTO dto) {

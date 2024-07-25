@@ -7,7 +7,7 @@ import packets.dto.outgoing.navigator.NewNavigatorEventCategoriesComposerDTO;
 import packets.outgoing.navigator.INewNavigatorEventCategoriesComposer;
 
 
-public class NewNavigatorEventCategoriesComposer implements IOutgoingDTOSerializer<NewNavigatorEventCategoriesComposerDTO>, INewNavigatorEventCategoriesComposer {
+public class NewNavigatorEventCategoriesComposer implements  INewNavigatorEventCategoriesComposer {
     @Override
     public void compose(IPacketWriter writer, NewNavigatorEventCategoriesComposerDTO dto) {
         writer.appendInt(dto.categories().size());

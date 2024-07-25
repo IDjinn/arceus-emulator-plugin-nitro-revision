@@ -7,7 +7,7 @@ import outgoing.OutgoingHeaders;
 import packets.outgoing.friends.IMessengerInitComposer;
 
 
-public class MessengerInitComposer implements IOutgoingDTOSerializer<IPacketDTO>, IMessengerInitComposer {
+public class MessengerInitComposer implements IMessengerInitComposer {
     @Override
     public void compose(IPacketWriter writer, IPacketDTO dto) {
         writer.appendInt(Integer.MAX_VALUE);

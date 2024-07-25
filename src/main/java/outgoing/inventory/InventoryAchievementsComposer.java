@@ -7,7 +7,7 @@ import outgoing.OutgoingHeaders;
 import packets.outgoing.inventory.IInventoryAchievementsComposer;
 
 
-public class InventoryAchievementsComposer implements IOutgoingDTOSerializer<IPacketDTO>, IInventoryAchievementsComposer {
+public class InventoryAchievementsComposer implements  IInventoryAchievementsComposer {
     @Override
     public void compose(IPacketWriter writer, IPacketDTO dto) {
         writer.appendInt(0);

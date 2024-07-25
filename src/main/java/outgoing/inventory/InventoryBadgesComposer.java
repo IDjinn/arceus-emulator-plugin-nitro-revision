@@ -7,7 +7,7 @@ import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.inventory.InventoryBadgesComposerDTO;
 import packets.outgoing.inventory.IInventoryBadgesComposer;
 
-public class InventoryBadgesComposer implements IOutgoingDTOSerializer<InventoryBadgesComposerDTO>, IInventoryBadgesComposer {
+public class InventoryBadgesComposer implements  IInventoryBadgesComposer {
     @Override
     public void compose(IPacketWriter writer, InventoryBadgesComposerDTO dto) {
         writer.appendInt(dto.badges().size());

@@ -7,7 +7,7 @@ import outgoing.OutgoingHeaders;
 import packets.outgoing.navigator.INewNavigatorSettingsComposer;
 
 
-public class NewNavigatorSettingsComposer implements IOutgoingDTOSerializer<IHabboNavigatorWindowSettings>, INewNavigatorSettingsComposer {
+public class NewNavigatorSettingsComposer implements  INewNavigatorSettingsComposer {
     @Override
     public void compose(IPacketWriter writer, IHabboNavigatorWindowSettings settings) {
         writer.appendInt(settings.getWindowX());

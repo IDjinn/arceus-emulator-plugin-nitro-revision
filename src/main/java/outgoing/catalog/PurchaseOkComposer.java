@@ -7,7 +7,7 @@ import packets.dto.outgoing.catalog.PurchaseOkComposerDTO;
 import packets.outgoing.catalog.IPurchaseOkComposer;
 
 
-public class PurchaseOkComposer implements IOutgoingDTOSerializer<PurchaseOkComposerDTO>, IPurchaseOkComposer {
+public class PurchaseOkComposer implements IPurchaseOkComposer {
     @Override
     public void compose(IPacketWriter writer, PurchaseOkComposerDTO dto) {
         final var item = dto.catalogItem();

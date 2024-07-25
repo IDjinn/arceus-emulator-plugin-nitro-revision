@@ -10,7 +10,7 @@ import serializers.catalog.CatalogPageSerializer;
 import packets.dto.outgoing.catalog.CatalogPageComposerDTO;
 
 
-public class CatalogPageComposer implements IOutgoingDTOSerializer<CatalogPageComposerDTO>, ICatalogPageComposer {
+public class CatalogPageComposer implements  ICatalogPageComposer {
     private @Inject CatalogPageSerializer catalogPageSerializer;
     private @Inject CatalogPageItemsSerializer catalogPageItemsSerializer;
     @Override

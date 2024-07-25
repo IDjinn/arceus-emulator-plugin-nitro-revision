@@ -7,7 +7,7 @@ import packets.dto.outgoing.room.data.RoomRightsComposerDTO;
 import packets.outgoing.rooms.prepare.IRoomRightsComposer;
 
 
-public class RoomRightsComposer implements IOutgoingDTOSerializer<RoomRightsComposerDTO>, IRoomRightsComposer {
+public class RoomRightsComposer implements  IRoomRightsComposer {
     @Override
     public void compose(IPacketWriter writer, RoomRightsComposerDTO dto) {
         writer.appendInt(dto.rightLevel().ordinal());

@@ -7,7 +7,7 @@ import outgoing.OutgoingHeaders;
 import packets.outgoing.session.buildersclub.IBuildersClubExpiredComposer;
 
 
-public class BuildersClubExpiredComposer implements IOutgoingDTOSerializer<IPacketDTO>, IBuildersClubExpiredComposer {
+public class BuildersClubExpiredComposer implements  IBuildersClubExpiredComposer {
     @Override
     public void compose(IPacketWriter writer, IPacketDTO dto) {
         writer.appendInt(Integer.MAX_VALUE);

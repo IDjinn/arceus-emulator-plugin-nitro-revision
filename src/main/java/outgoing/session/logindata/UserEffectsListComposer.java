@@ -7,7 +7,7 @@ import outgoing.OutgoingHeaders;
 import packets.outgoing.session.logindata.IUserEffectsListComposer;
 
 
-public class UserEffectsListComposer implements IOutgoingDTOSerializer<IPacketDTO>, IUserEffectsListComposer {
+public class UserEffectsListComposer implements  IUserEffectsListComposer {
     @Override
     public void compose(IPacketWriter writer, IPacketDTO dto) {
         writer.appendInt(0);

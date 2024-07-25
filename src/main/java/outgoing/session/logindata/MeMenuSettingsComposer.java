@@ -6,7 +6,7 @@ import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.outgoing.session.logindata.IMeMenuSettingsComposer;
 
-public class MeMenuSettingsComposer implements IOutgoingDTOSerializer<IPacketDTO>, IMeMenuSettingsComposer { // TODO: USER CONFIGURATION SETTINGS
+public class MeMenuSettingsComposer implements  IMeMenuSettingsComposer { // TODO: USER CONFIGURATION SETTINGS
     @Override
     public void compose(final IPacketWriter writer, final IPacketDTO dto) {
         writer.appendInt(100);

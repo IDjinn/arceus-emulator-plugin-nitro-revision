@@ -7,7 +7,7 @@ import outgoing.OutgoingHeaders;
 import packets.outgoing.inventory.IInventoryRefreshComposer;
 
 
-public class InventoryRefreshComposer implements IOutgoingDTOSerializer<IPacketDTO>, IInventoryRefreshComposer {
+public class InventoryRefreshComposer implements  IInventoryRefreshComposer {
     @Override
     public void compose(IPacketWriter writer, IPacketDTO dto) {
     }

@@ -7,7 +7,7 @@ import outgoing.OutgoingHeaders;
 import packets.outgoing.session.habboclub.IUserClubComposer;
 
 
-public class UserClubComposer implements IOutgoingDTOSerializer<IPacketDTO>, IUserClubComposer {
+public class UserClubComposer implements  IUserClubComposer {
     @Override
     public void compose(IPacketWriter writer, IPacketDTO dto) {
         writer.appendString("HABBO_CLUB".toLowerCase());

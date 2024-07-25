@@ -7,7 +7,7 @@ import packets.dto.outgoing.room.gamemap.RoomHeightMapComposerDTO;
 import packets.outgoing.rooms.gamemap.IRoomHeightMapComposer;
 
 
-public class RoomHeightMapComposer implements IOutgoingDTOSerializer<RoomHeightMapComposerDTO>, IRoomHeightMapComposer {
+public class RoomHeightMapComposer implements  IRoomHeightMapComposer {
     @Override
     public void compose(IPacketWriter writer, RoomHeightMapComposerDTO dto) {
         writer.appendBoolean(true, "scale (true ? 32 : 64");

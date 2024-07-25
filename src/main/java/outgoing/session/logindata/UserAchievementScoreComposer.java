@@ -7,7 +7,7 @@ import outgoing.OutgoingHeaders;
 import packets.outgoing.session.logindata.IUserAchievementScoreComposer;
 
 
-public class UserAchievementScoreComposer implements IOutgoingDTOSerializer<IPacketDTO>, IUserAchievementScoreComposer {
+public class UserAchievementScoreComposer implements  IUserAchievementScoreComposer {
     @Override
     public void compose(IPacketWriter writer, IPacketDTO dto) {
         writer.appendInt(100);

@@ -7,7 +7,7 @@ import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.outgoing.session.logindata.IEnableNotificationsComposer;
 
-public class EnableNotificationsComposer implements IOutgoingDTOSerializer<IPacketDTO>, IEnableNotificationsComposer {
+public class EnableNotificationsComposer implements  IEnableNotificationsComposer {
     @Override
     public void compose(IPacketWriter writer, IPacketDTO dto) {
         writer.appendBoolean(true);

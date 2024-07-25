@@ -7,7 +7,7 @@ import outgoing.OutgoingHeaders;
 import packets.outgoing.session.logindata.INewUserIdentityComposer;
 
 
-public class NewUserIdentityComposer implements IOutgoingDTOSerializer<IPacketDTO>, INewUserIdentityComposer {
+public class NewUserIdentityComposer implements  INewUserIdentityComposer {
     @Override
     public void compose(IPacketWriter writer, IPacketDTO dto) {
         writer.appendInt(1);

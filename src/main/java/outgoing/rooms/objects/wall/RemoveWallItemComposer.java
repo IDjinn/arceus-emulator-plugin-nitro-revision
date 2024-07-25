@@ -7,7 +7,7 @@ import packets.dto.outgoing.room.items.wall.RemoveWallItemComposerDTO;
 import packets.outgoing.rooms.objects.wall.IRemoveWallItemComposer;
 
 
-public class RemoveWallItemComposer implements IOutgoingDTOSerializer<RemoveWallItemComposerDTO>, IRemoveWallItemComposer {
+public class RemoveWallItemComposer implements  IRemoveWallItemComposer {
     @Override
     public void compose(IPacketWriter writer, RemoveWallItemComposerDTO dto) {
         writer.appendString(String.valueOf(dto.wallItem().getVirtualId()));

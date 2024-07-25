@@ -6,7 +6,7 @@ import networking.packets.IPacketSerializer;
 import networking.packets.IPacketWriter;
 import packets.outgoing.inventory.IHabboInventoryItemSerializer;
 
-public class HabboInventoryItemSerializer implements IPacketSerializer<IHabboInventoryItem>, IHabboInventoryItemSerializer {
+public class HabboInventoryItemSerializer implements IHabboInventoryItemSerializer {
     @Override
     public void serialize(IPacketWriter writer, IHabboInventoryItem dto) {
         writer.appendInt(dto.getId())

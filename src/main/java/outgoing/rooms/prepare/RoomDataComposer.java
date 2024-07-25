@@ -9,7 +9,7 @@ import packets.outgoing.rooms.prepare.IRoomDataComposer;
 import serializers.rooms.RoomSerializer;
 
 
-public class RoomDataComposer implements IOutgoingDTOSerializer<RoomDataComposerDTO>, IRoomDataComposer {
+public class RoomDataComposer implements  IRoomDataComposer {
     private @Inject RoomSerializer roomSerializer;
     @Override
     public void compose(IPacketWriter writer, RoomDataComposerDTO dto) {

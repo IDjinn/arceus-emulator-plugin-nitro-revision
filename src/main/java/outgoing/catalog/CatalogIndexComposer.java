@@ -7,7 +7,7 @@ import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.catalog.CatalogIndexComposerDTO;
 import packets.outgoing.catalog.ICatalogIndexComposer;
 
-public class CatalogIndexComposer implements IOutgoingDTOSerializer<CatalogIndexComposerDTO>, ICatalogIndexComposer {
+public class CatalogIndexComposer implements ICatalogIndexComposer {
     @Override
     public void compose(IPacketWriter writer, CatalogIndexComposerDTO dto) {
         writer.appendBoolean(true, "isVisible");

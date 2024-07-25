@@ -7,7 +7,7 @@ import outgoing.OutgoingHeaders;
 import packets.outgoing.rooms.prepare.IRoomOpenComposer;
 
 
-public class RoomOpenComposer implements IOutgoingDTOSerializer<IPacketDTO>, IRoomOpenComposer {
+public class RoomOpenComposer implements  IRoomOpenComposer {
     @Override
     public void compose(IPacketWriter writer, IPacketDTO dto) {
     }
