@@ -1,14 +1,15 @@
 package outgoing.rooms.objects.wall;
 
 import com.google.inject.Inject;
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.room.items.wall.AddWallItemComposerDTO;
+import packets.outgoing.rooms.objects.wall.IAddWallItemComposer;
 import serializers.items.WallItemSerializer;
 
 
-public class AddWallItemComposer implements IOutgoingPacket<AddWallItemComposerDTO> {
+public class AddWallItemComposer implements IOutgoingDTOSerializer<AddWallItemComposerDTO>, IAddWallItemComposer {
     private @Inject WallItemSerializer wallItemSerializer;
 
     @Override

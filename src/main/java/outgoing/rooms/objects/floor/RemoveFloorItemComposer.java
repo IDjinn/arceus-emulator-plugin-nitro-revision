@@ -1,12 +1,13 @@
 package outgoing.rooms.objects.floor;
 
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.room.items.floor.RemoveFloorItemComposerDTO;
+import packets.outgoing.rooms.objects.floor.IRemoveFloorItemComposer;
 
 
-public class RemoveFloorItemComposer implements IOutgoingPacket<RemoveFloorItemComposerDTO> {
+public class RemoveFloorItemComposer implements IOutgoingDTOSerializer<RemoveFloorItemComposerDTO>, IRemoveFloorItemComposer {
     @Override
     public void compose(IPacketWriter writer, RemoveFloorItemComposerDTO dto) {
         writer.appendString(String.valueOf(dto.floorItem().getVirtualId()));

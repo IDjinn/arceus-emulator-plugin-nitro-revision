@@ -2,12 +2,12 @@ package outgoing.rooms.entities.chat;
 
 import habbo.commands.ICommand;
 import habbo.internationalization.IInternationalizationManager;
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 
 import java.util.List;
 import java.util.Locale;
 
-public class CommandListComposer extends IOutgoingPacket<U> {
+public class CommandListComposer extends IOutgoingDTOSerializer<U> {
     public CommandListComposer(final List<? extends ICommand> commandList,
                                final IInternationalizationManager internationalizationManager,
                                final Locale locale) {
@@ -20,7 +20,7 @@ public class CommandListComposer extends IOutgoingPacket<U> {
     }
 
     public static void serialize(
-            final IOutgoingPacket<U> packet,
+            final IOutgoingDTOSerializer<U> packet,
             final IInternationalizationManager internationalizationManager,
             final Locale locale,
             final ICommand command

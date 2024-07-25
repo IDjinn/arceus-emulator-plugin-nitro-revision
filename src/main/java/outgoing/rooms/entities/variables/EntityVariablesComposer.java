@@ -1,11 +1,11 @@
 package outgoing.rooms.entities.variables;
 
 import habbo.variables.IVariable;
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 
 import java.util.Map;
 
-public class EntityVariablesComposer extends IOutgoingPacket<U> {
+public class EntityVariablesComposer extends IOutgoingDTOSerializer<U> {
     public EntityVariablesComposer(Map<String, IVariable<?>> variables) {
         super(OutgoingHeaders.EntityVariablesComposer);
 

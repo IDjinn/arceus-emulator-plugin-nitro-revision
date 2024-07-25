@@ -1,11 +1,12 @@
 package outgoing.session.hotel;
 
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketDTO;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
+import packets.outgoing.session.hotel.IAvailabilityStatusMessageComposer;
 
-public class AvailabilityStatusMessageComposer implements IOutgoingPacket<IPacketDTO> {
+public class AvailabilityStatusMessageComposer implements IOutgoingDTOSerializer<IPacketDTO>, IAvailabilityStatusMessageComposer {
     @Override
     public void compose(IPacketWriter writer, IPacketDTO dto) {
         writer.appendBoolean(true);

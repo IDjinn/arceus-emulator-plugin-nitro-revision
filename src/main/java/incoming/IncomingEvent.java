@@ -2,8 +2,8 @@ package incoming;
 
 import io.netty.channel.ChannelHandlerContext;
 import networking.client.IClient;
-import networking.packets.IIncomingEvent;
-import networking.packets.IIncomingPacket;
+import networking.packets.incoming.IIncomingEvent;
+import networking.packets.incoming.IIncomingPacket;
 
 public abstract class IncomingEvent implements IIncomingEvent {
 

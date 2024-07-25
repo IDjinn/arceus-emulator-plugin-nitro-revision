@@ -1,11 +1,12 @@
 package outgoing.inventory;
 
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.inventory.AddHabboItemComposerDTO;
+import packets.outgoing.inventory.IAddHabboItemComposer;
 
-public class AddHabboItemComposer implements IOutgoingPacket<AddHabboItemComposerDTO> {
+public class AddHabboItemComposer implements IOutgoingDTOSerializer<AddHabboItemComposerDTO>, IAddHabboItemComposer {
     @Override
     public void compose(IPacketWriter writer, AddHabboItemComposerDTO dto) {
         writer.appendInt(1, "total unseen categories");

@@ -1,13 +1,14 @@
 package outgoing.rooms.gamemap;
 
 import com.google.inject.Inject;
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.room.gamemap.UpdateStackHeightComposerDTO;
+import packets.outgoing.rooms.gamemap.IUpdateStackHeightComposer;
 import serializers.rooms.gamemap.GameMapSerializer;
 
-public class UpdateStackHeightComposer implements IOutgoingPacket<UpdateStackHeightComposerDTO> {
+public class UpdateStackHeightComposer implements IOutgoingDTOSerializer<UpdateStackHeightComposerDTO>, IUpdateStackHeightComposer {
     private @Inject GameMapSerializer gameMapSerializer;
     @Override
     public void compose(IPacketWriter writer, UpdateStackHeightComposerDTO dto) {

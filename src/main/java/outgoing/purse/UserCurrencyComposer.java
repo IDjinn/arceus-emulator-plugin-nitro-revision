@@ -1,12 +1,13 @@
 package outgoing.purse;
 
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.purse.UserCurrencyComposerDTO;
+import packets.outgoing.purse.IUserCurrencyComposer;
 
 
-public class UserCurrencyComposer implements IOutgoingPacket<UserCurrencyComposerDTO> {
+public class UserCurrencyComposer implements IOutgoingDTOSerializer<UserCurrencyComposerDTO>, IUserCurrencyComposer {
     @Override
     public void compose(IPacketWriter writer, UserCurrencyComposerDTO dto) {
         writer.appendInt(dto.currencies().size());

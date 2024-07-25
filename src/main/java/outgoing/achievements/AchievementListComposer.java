@@ -1,12 +1,13 @@
 package outgoing.achievements;
 
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketDTO;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
+import packets.outgoing.achievements.IAchievementListComposer;
 
 
-public class AchievementListComposer implements IOutgoingPacket<IPacketDTO> {
+public class AchievementListComposer implements IAchievementListComposer {
     @Override
     public void compose(IPacketWriter writer, IPacketDTO dto) {
         writer.appendInt(0);

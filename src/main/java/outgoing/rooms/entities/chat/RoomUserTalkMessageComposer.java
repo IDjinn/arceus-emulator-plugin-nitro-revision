@@ -1,12 +1,12 @@
 package outgoing.rooms.entities.chat;
 
 import habbo.rooms.entities.IRoomEntity;
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 
 import java.util.Collections;
 import java.util.Set;
 
-public class RoomUserTalkMessageComposer extends IOutgoingPacket<U> {
+public class RoomUserTalkMessageComposer extends IOutgoingDTOSerializer<U> {
     public RoomUserTalkMessageComposer(final IRoomEntity entity,
                                        final String message) {
         this(entity, message, 0, 0, Collections.emptySet());

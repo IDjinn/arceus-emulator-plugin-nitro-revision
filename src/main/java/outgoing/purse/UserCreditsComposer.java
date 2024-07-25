@@ -1,12 +1,13 @@
 package outgoing.purse;
 
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.purse.UserCreditsComposerDTO;
+import packets.outgoing.purse.IUserCreditsComposer;
 
 
-public class UserCreditsComposer implements IOutgoingPacket<UserCreditsComposerDTO> {
+public class UserCreditsComposer implements IOutgoingDTOSerializer<UserCreditsComposerDTO>, IUserCreditsComposer {
     @Override
     public void compose(IPacketWriter writer, UserCreditsComposerDTO dto) {
         writer.appendString(STR."\{dto.value()}");

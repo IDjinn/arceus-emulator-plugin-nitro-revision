@@ -4,8 +4,9 @@ import habbo.furniture.FurnitureType;
 import habbo.habbos.inventory.IHabboInventoryItem;
 import networking.packets.IPacketSerializer;
 import networking.packets.IPacketWriter;
+import packets.outgoing.inventory.IHabboInventoryItemSerializer;
 
-public class HabboInventoryItemSerializer implements IPacketSerializer<IHabboInventoryItem> {
+public class HabboInventoryItemSerializer implements IPacketSerializer<IHabboInventoryItem>, IHabboInventoryItemSerializer {
     @Override
     public void serialize(IPacketWriter writer, IHabboInventoryItem dto) {
         writer.appendInt(dto.getId())

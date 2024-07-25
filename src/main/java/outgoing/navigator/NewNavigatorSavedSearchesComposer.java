@@ -1,11 +1,12 @@
 package outgoing.navigator;
 
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.navigator.NewNavigatorSavedSearchesComposerDTO;
+import packets.outgoing.navigator.INewNavigatorSavedSearchesComposer;
 
-public class NewNavigatorSavedSearchesComposer implements IOutgoingPacket<NewNavigatorSavedSearchesComposerDTO> {
+public class NewNavigatorSavedSearchesComposer implements IOutgoingDTOSerializer<NewNavigatorSavedSearchesComposerDTO>, INewNavigatorSavedSearchesComposer {
     @Override
     public void compose(IPacketWriter writer, NewNavigatorSavedSearchesComposerDTO dto) {
         writer.appendInt(dto.searches().size());

@@ -1,11 +1,12 @@
 package outgoing.badges;
 
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.badges.UserBadgesDTO;
+import packets.outgoing.badges.IUserBadgesComposer;
 
-public class UserBadgesComposer implements IOutgoingPacket<UserBadgesDTO> {
+public class UserBadgesComposer implements IOutgoingDTOSerializer<UserBadgesDTO>, IUserBadgesComposer {
     @Override
     public void compose(IPacketWriter writer, UserBadgesDTO dto) {
         writer.appendInt(dto.userId());

@@ -1,12 +1,13 @@
-package outgoing.navigator.search;
+package outgoing.navigator;
 
 import habbo.navigator.data.INavigatorResultCategory;
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.navigator.NewNavigatorSearchResultsComposerDTO;
+import packets.outgoing.navigator.INewNavigatorSearchResultsComposer;
 
-public class NewNavigatorSearchResultsComposer implements IOutgoingPacket<NewNavigatorSearchResultsComposerDTO> {
+public class NewNavigatorSearchResultsComposer implements IOutgoingDTOSerializer<NewNavigatorSearchResultsComposerDTO>, INewNavigatorSearchResultsComposer {
     @Override
     public void compose(IPacketWriter writer, NewNavigatorSearchResultsComposerDTO dto) {
         writer.appendString(dto.code());

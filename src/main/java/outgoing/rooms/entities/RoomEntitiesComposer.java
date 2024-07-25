@@ -1,11 +1,11 @@
 package outgoing.rooms.entities;
 
 import habbo.rooms.entities.IRoomEntity;
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 
 import java.util.List;
 
-public class RoomEntitiesComposer extends IOutgoingPacket<U> {
+public class RoomEntitiesComposer extends IOutgoingDTOSerializer<U> {
     public RoomEntitiesComposer(IRoomEntity entity) {
         super(OutgoingHeaders.RoomEntitiesComposer);
         this.appendInt(1);

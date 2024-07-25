@@ -4,7 +4,7 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import habbo.rooms.IRoomManager;
 import networking.client.IClient;
-import networking.packets.IIncomingPacket;
+import networking.packets.incoming.IIncomingPacket;
 import incoming.IncomingEvent;
 import org.jetbrains.annotations.Nullable;
 import packets.incoming.IncomingHeaders;

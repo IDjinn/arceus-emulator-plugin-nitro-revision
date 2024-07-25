@@ -1,12 +1,13 @@
 package outgoing.navigator;
 
 import habbo.habbos.data.navigator.IHabboNavigatorWindowSettings;
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
+import packets.outgoing.navigator.INewNavigatorSettingsComposer;
 
 
-public class NewNavigatorSettingsComposer implements IOutgoingPacket<IHabboNavigatorWindowSettings> {
+public class NewNavigatorSettingsComposer implements IOutgoingDTOSerializer<IHabboNavigatorWindowSettings>, INewNavigatorSettingsComposer {
     @Override
     public void compose(IPacketWriter writer, IHabboNavigatorWindowSettings settings) {
         writer.appendInt(settings.getWindowX());

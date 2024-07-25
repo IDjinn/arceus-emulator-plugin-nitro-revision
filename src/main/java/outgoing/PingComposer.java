@@ -1,11 +1,11 @@
 package outgoing;
 
 
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketDTO;
 import networking.packets.IPacketWriter;
 
-public class PingComposer implements IOutgoingPacket<IPacketDTO> {
+public class PingComposer implements IOutgoingDTOSerializer<IPacketDTO> {
     @Override
     public void compose(IPacketWriter writer, IPacketDTO dto) {
         

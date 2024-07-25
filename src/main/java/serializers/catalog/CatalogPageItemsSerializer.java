@@ -1,4 +1,4 @@
-package outgoing.catalog.pages;
+package serializers.catalog;
 
 import networking.packets.IPacketSerializer;
 import networking.packets.IPacketWriter;

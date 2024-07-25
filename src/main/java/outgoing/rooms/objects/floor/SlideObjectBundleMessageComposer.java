@@ -1,11 +1,12 @@
 package outgoing.rooms.objects.floor;
 
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
+import packets.outgoing.rooms.objects.floor.ISlideObjectBundleMessageComposer;
 import utils.pathfinder.Position;
 
 import java.util.Collection;
 
-public class SlideObjectBundleMessageComposer extends IOutgoingPacket<U> {
+public class SlideObjectBundleMessageComposer extends IOutgoingDTOSerializer<U> implements ISlideObjectBundleMessageComposer {
 
     public SlideObjectBundleMessageComposer(Position oldPosition, Position nextPosition, Collection<SlideObjectEntry> objects,
                                             int rollerId) {

@@ -1,12 +1,13 @@
 package outgoing.catalog;
 
 import habbo.catalog.pages.ICatalogPage;
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.catalog.CatalogIndexComposerDTO;
+import packets.outgoing.catalog.ICatalogIndexComposer;
 
-public class CatalogIndexComposer implements IOutgoingPacket<CatalogIndexComposerDTO> {
+public class CatalogIndexComposer implements IOutgoingDTOSerializer<CatalogIndexComposerDTO>, ICatalogIndexComposer {
     @Override
     public void compose(IPacketWriter writer, CatalogIndexComposerDTO dto) {
         writer.appendBoolean(true, "isVisible");

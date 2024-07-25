@@ -1,7 +1,6 @@
 package serializers.rooms.entities.components;
 
 import habbo.rooms.entities.status.IEntityStatusComponent;
-import networking.packets.IOutgoingPacket;
 import networking.packets.IPacketSerializer;
 import networking.packets.IPacketWriter;
 import utils.StringBuilderHelper;

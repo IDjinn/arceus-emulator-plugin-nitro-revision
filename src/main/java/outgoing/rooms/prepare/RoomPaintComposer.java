@@ -1,12 +1,13 @@
 package outgoing.rooms.prepare;
 
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.room.data.RoomPaintComposerDTO;
+import packets.outgoing.rooms.prepare.IRoomPaintComposer;
 
 
-public class RoomPaintComposer implements IOutgoingPacket<RoomPaintComposerDTO> {
+public class RoomPaintComposer implements IOutgoingDTOSerializer<RoomPaintComposerDTO>, IRoomPaintComposer {
     @Override
     public void compose(IPacketWriter writer, RoomPaintComposerDTO dto) {
         writer.appendString(dto.type());

@@ -1,10 +1,10 @@
 package outgoing.rooms.entities.chat;
 
 import habbo.rooms.entities.IRoomEntity;
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 
 
-public class RoomUserTypingComposer extends IOutgoingPacket<U> {
+public class RoomUserTypingComposer extends IOutgoingDTOSerializer<U> {
     public RoomUserTypingComposer(IRoomEntity entity, boolean isTyping) {
         super(OutgoingHeaders.RoomUserTypingComposer);
 

@@ -1,15 +1,16 @@
 package outgoing.catalog;
 
 import com.google.inject.Inject;
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
-import outgoing.catalog.pages.CatalogPageItemsSerializer;
-import outgoing.catalog.pages.CatalogPageSerializer;
+import packets.outgoing.catalog.ICatalogPageComposer;
+import serializers.catalog.CatalogPageItemsSerializer;
+import serializers.catalog.CatalogPageSerializer;
 import packets.dto.outgoing.catalog.CatalogPageComposerDTO;
 
 
-public class CatalogPageComposer implements IOutgoingPacket<CatalogPageComposerDTO> {
+public class CatalogPageComposer implements IOutgoingDTOSerializer<CatalogPageComposerDTO>, ICatalogPageComposer {
     private @Inject CatalogPageSerializer catalogPageSerializer;
     private @Inject CatalogPageItemsSerializer catalogPageItemsSerializer;
     @Override

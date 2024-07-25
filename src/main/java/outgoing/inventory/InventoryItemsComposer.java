@@ -1,11 +1,12 @@
 package outgoing.inventory;
 
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.inventory.InventoryItemsComposerDTO;
+import packets.outgoing.inventory.IInventoryItemsComposer;
 
-public class InventoryItemsComposer implements IOutgoingPacket<InventoryItemsComposerDTO> {
+public class InventoryItemsComposer implements IOutgoingDTOSerializer<InventoryItemsComposerDTO>, IInventoryItemsComposer {
     @Override
     public void compose(IPacketWriter writer, InventoryItemsComposerDTO dto) {
         writer.appendInt(dto.fragment());

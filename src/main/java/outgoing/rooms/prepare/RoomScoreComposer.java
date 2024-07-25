@@ -1,12 +1,13 @@
 package outgoing.rooms.prepare;
 
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketDTO;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
+import packets.outgoing.rooms.prepare.IRoomScoreComposer;
 
 
-public class RoomScoreComposer implements IOutgoingPacket<IPacketDTO> {
+public class RoomScoreComposer implements IOutgoingDTOSerializer<IPacketDTO>, IRoomScoreComposer {
     @Override
     public void compose(IPacketWriter writer, IPacketDTO dto) {
         writer.appendInt(0, "score");

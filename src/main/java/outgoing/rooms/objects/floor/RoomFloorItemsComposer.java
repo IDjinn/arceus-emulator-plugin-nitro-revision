@@ -1,14 +1,15 @@
 package outgoing.rooms.objects.floor;
 
 import com.google.inject.Inject;
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.room.items.floor.RoomFloorItemsComposerDTO;
+import packets.outgoing.rooms.objects.floor.IRoomFloorItemsComposer;
 import serializers.items.FloorItemSerializer;
 import serializers.items.OwnerItemListSerializer;
 
-public class RoomFloorItemsComposer implements IOutgoingPacket<RoomFloorItemsComposerDTO> {
+public class RoomFloorItemsComposer implements IOutgoingDTOSerializer<RoomFloorItemsComposerDTO>, IRoomFloorItemsComposer {
     private @Inject FloorItemSerializer floorItemSerializer;
     private @Inject OwnerItemListSerializer ownerItemListSerializer;
 

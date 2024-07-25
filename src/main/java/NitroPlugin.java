@@ -6,8 +6,8 @@ import core.plugins.IPlugin;
 import incoming.AutoBindIncomingEventsModule;
 import incoming.IncomingEvent;
 import incoming.IncomingEventAsListProvider;
-import networking.packets.IIncomingEvent;
-import networking.packets.IOutgoingPacket;
+import networking.packets.incoming.IIncomingEvent;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 import org.apache.maven.artifact.versioning.ComparableVersion;
 import outgoing.AutoBindOutgoingEventsModule;
 import outgoing.OutgoingEventAsListProvider;
@@ -64,7 +64,7 @@ public class NitroPlugin extends AbstractModule implements IPlugin {
         this.install(new AutoBindOutgoingEventsModule());
         this.bind(new TypeLiteral<List<Class<? extends IIncomingEvent>>>() {
         }).toProvider(IncomingEventAsListProvider.class);
-        this.bind(new TypeLiteral<List<Class<? extends IOutgoingPacket>>>() {
+        this.bind(new TypeLiteral<List<Class<? extends IOutgoingDTOSerializer>>>() {
         }).toProvider(OutgoingEventAsListProvider.class);
     }
 }

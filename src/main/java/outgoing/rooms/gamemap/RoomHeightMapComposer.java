@@ -1,12 +1,13 @@
 package outgoing.rooms.gamemap;
 
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.room.gamemap.RoomHeightMapComposerDTO;
+import packets.outgoing.rooms.gamemap.IRoomHeightMapComposer;
 
 
-public class RoomHeightMapComposer implements IOutgoingPacket<RoomHeightMapComposerDTO> {
+public class RoomHeightMapComposer implements IOutgoingDTOSerializer<RoomHeightMapComposerDTO>, IRoomHeightMapComposer {
     @Override
     public void compose(IPacketWriter writer, RoomHeightMapComposerDTO dto) {
         writer.appendBoolean(true, "scale (true ? 32 : 64");

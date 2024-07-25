@@ -1,7 +1,7 @@
 package incoming;
 
 import com.google.inject.Provider;
-import networking.packets.IIncomingEvent;
+import networking.packets.incoming.IIncomingEvent;
 import org.reflections.Reflections;
 import packets.PacketManager;
 

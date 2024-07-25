@@ -4,7 +4,7 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import habbo.habbos.IHabboManager;
 import networking.client.IClient;
-import networking.packets.IIncomingPacket;
+import networking.packets.incoming.IIncomingPacket;
 import incoming.IncomingEvent;
 import packets.incoming.IncomingHeaders;
 import packets.outgoing.badges.UserBadgesComposer;

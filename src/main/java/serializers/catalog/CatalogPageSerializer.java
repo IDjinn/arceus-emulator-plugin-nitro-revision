@@ -1,4 +1,4 @@
-package outgoing.catalog.pages;
+package serializers.catalog;
 
 import habbo.catalog.pages.ICatalogPage;
 import networking.packets.IPacketSerializer;

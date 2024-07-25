@@ -1,14 +1,15 @@
 package outgoing.rooms.prepare;
 
 import com.google.inject.Inject;
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.room.data.RoomDataComposerDTO;
+import packets.outgoing.rooms.prepare.IRoomDataComposer;
 import serializers.rooms.RoomSerializer;
 
 
-public class RoomDataComposer implements IOutgoingPacket<RoomDataComposerDTO> {
+public class RoomDataComposer implements IOutgoingDTOSerializer<RoomDataComposerDTO>, IRoomDataComposer {
     private @Inject RoomSerializer roomSerializer;
     @Override
     public void compose(IPacketWriter writer, RoomDataComposerDTO dto) {

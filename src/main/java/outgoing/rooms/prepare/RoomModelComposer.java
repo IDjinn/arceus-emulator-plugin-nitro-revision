@@ -1,12 +1,13 @@
 package outgoing.rooms.prepare;
 
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.room.data.RoomModelComposerDTO;
+import packets.outgoing.rooms.prepare.IRoomModelComposer;
 
 
-public class RoomModelComposer implements IOutgoingPacket<RoomModelComposerDTO> {
+public class RoomModelComposer implements IOutgoingDTOSerializer<RoomModelComposerDTO>, IRoomModelComposer {
     @Override
     public void compose(IPacketWriter writer, RoomModelComposerDTO dto) {
         writer.appendString(dto.modelName());

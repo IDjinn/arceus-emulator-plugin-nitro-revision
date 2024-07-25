@@ -4,9 +4,9 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import habbo.catalog.ICatalogManager;
 import networking.client.IClient;
-import networking.packets.IIncomingPacket;
+import networking.packets.incoming.IIncomingPacket;
 import incoming.IncomingEvent;
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 import packets.incoming.IncomingHeaders;
 import packets.outgoing.catalog.CatalogIndexComposer;
 
@@ -24,7 +24,7 @@ public class RequestCatalogModeEvent extends IncomingEvent {
 
     @Override
     public void parse(IIncomingPacket packet, IClient client) {
-        client.sendMessage(new IOutgoingPacket<U>(3828).appendInt(0));
+        client.sendMessage(new IOutgoingDTOSerializer<U>(3828).appendInt(0));
         client.sendMessage(new CatalogIndexComposer(false, "normal",
                 this.catalogManager.getCatalogPagesForHabbo(this.RootPageId, client.getHabbo())));
     }

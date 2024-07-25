@@ -1,12 +1,13 @@
 package outgoing.session.logindata;
 
-import networking.packets.IOutgoingPacket;
+import networking.packets.outgoing.IOutgoingDTOSerializer;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.session.logindata.UserDataDTO;
+import packets.outgoing.session.logindata.IUserDataComposer;
 
 
-public class UserDataComposer implements IOutgoingPacket<UserDataDTO> {
+public class UserDataComposer implements IOutgoingDTOSerializer<UserDataDTO>, IUserDataComposer {
     @Override
     public void compose(final IPacketWriter writer, final UserDataDTO dto) {
         final var habbo = dto.habbo();

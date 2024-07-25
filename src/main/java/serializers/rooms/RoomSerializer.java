@@ -1,8 +1,6 @@
 package serializers.rooms;
 
-import com.google.inject.Singleton;
 import habbo.rooms.IRoom;
-import networking.packets.IOutgoingPacket;
 import networking.packets.IPacketSerializer;
 import networking.packets.IPacketWriter;
 

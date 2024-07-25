@@ -1,7 +1,7 @@
 package incoming;
 
 import com.google.inject.AbstractModule;
-import networking.packets.IIncomingEvent;
+import networking.packets.incoming.IIncomingEvent;
 import org.reflections.Reflections;
 
 import java.lang.reflect.Modifier;
