@@ -1,8 +1,8 @@
 package outgoing.navigator.search;
 
 import habbo.navigator.data.INavigatorResultCategory;
-import networking.packets.IPacketWriter;
 import networking.packets.IOutgoingPacket;
+import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.navigator.NewNavigatorSearchResultsComposerDTO;
 

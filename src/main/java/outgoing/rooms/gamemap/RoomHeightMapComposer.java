@@ -1,6 +1,5 @@
 package outgoing.rooms.gamemap;
 
-import habbo.rooms.components.gamemap.IRoomGameMap;
 import networking.packets.IOutgoingPacket;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;

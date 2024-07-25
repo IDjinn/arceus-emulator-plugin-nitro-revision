@@ -1,11 +1,11 @@
 package outgoing.rooms.prepare;
 
 import com.google.inject.Inject;
-import serializers.rooms.RoomSerializer;
 import networking.packets.IOutgoingPacket;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.room.data.RoomDataComposerDTO;
+import serializers.rooms.RoomSerializer;
 
 
 public class RoomDataComposer implements IOutgoingPacket<RoomDataComposerDTO> {

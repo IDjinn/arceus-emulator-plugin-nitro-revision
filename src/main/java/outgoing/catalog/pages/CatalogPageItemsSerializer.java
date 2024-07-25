@@ -1,6 +1,5 @@
 package outgoing.catalog.pages;
 
-import habbo.catalog.pages.ICatalogPage;
 import networking.packets.IPacketSerializer;
 import networking.packets.IPacketWriter;
 import packets.dto.outgoing.catalog.CatalogPageComposerDTO;

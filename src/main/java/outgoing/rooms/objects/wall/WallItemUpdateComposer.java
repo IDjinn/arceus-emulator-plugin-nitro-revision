@@ -1,8 +1,6 @@
 package outgoing.rooms.objects.wall;
 
 import com.google.inject.Inject;
-import habbo.furniture.FurnitureUsagePolicy;
-import habbo.rooms.components.objects.items.wall.IWallItem;
 import networking.packets.IOutgoingPacket;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;

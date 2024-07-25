@@ -3,7 +3,7 @@ package incoming.guest;
 import com.google.inject.Singleton;
 import networking.client.IClient;
 import networking.packets.IIncomingPacket;
-import networking.packets.IncomingEvent;
+import incoming.IncomingEvent;
 import networking.util.NoAuth;
 import packets.incoming.IncomingHeaders;
 import packets.outgoing.PingComposer;

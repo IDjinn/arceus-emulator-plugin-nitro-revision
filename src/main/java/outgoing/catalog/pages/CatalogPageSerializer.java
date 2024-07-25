@@ -3,7 +3,6 @@ package outgoing.catalog.pages;
 import habbo.catalog.pages.ICatalogPage;
 import networking.packets.IPacketSerializer;
 import networking.packets.IPacketWriter;
-import packets.dto.outgoing.catalog.CatalogPageComposerDTO;
 
 public class CatalogPageSerializer implements IPacketSerializer<ICatalogPage> { // TODO: THIS DOES NOT SUPPORT INHERITANCE 
 

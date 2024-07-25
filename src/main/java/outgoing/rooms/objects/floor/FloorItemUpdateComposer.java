@@ -4,7 +4,6 @@ import com.google.inject.Inject;
 import networking.packets.IOutgoingPacket;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
-import packets.dto.outgoing.room.items.floor.AddFloorItemComposerDTO;
 import packets.dto.outgoing.room.items.floor.FloorItemUpdateComposerDTO;
 import serializers.items.FloorItemSerializer;
 

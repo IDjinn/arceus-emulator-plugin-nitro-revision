@@ -1,6 +1,5 @@
 package outgoing.rooms.objects.floor;
 
-import habbo.rooms.components.objects.items.floor.IFloorItem;
 import networking.packets.IOutgoingPacket;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;

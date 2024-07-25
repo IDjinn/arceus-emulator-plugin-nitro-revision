@@ -1,17 +1,12 @@
 package outgoing.rooms.objects.floor;
 
 import com.google.inject.Inject;
-import habbo.furniture.FurnitureUsagePolicy;
-import habbo.rooms.components.objects.items.floor.IFloorItem;
 import networking.packets.IOutgoingPacket;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.room.items.floor.RoomFloorItemsComposerDTO;
 import serializers.items.FloorItemSerializer;
 import serializers.items.OwnerItemListSerializer;
-
-import java.util.Collection;
-import java.util.List;
 
 public class RoomFloorItemsComposer implements IOutgoingPacket<RoomFloorItemsComposerDTO> {
     private @Inject FloorItemSerializer floorItemSerializer;

@@ -1,7 +1,7 @@
 package outgoing.session.logindata;
 
-import networking.packets.IPacketWriter;
 import networking.packets.IOutgoingPacket;
+import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.session.logindata.UserDataDTO;
 

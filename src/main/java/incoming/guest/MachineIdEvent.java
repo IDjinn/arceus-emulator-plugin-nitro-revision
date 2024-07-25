@@ -3,7 +3,7 @@ package incoming.guest;
 import com.google.inject.Singleton;
 import io.netty.channel.ChannelHandlerContext;
 import networking.packets.IIncomingPacket;
-import networking.packets.IncomingEvent;
+import incoming.IncomingEvent;
 import networking.util.GameNetowrkingAttributes;
 import networking.util.MachineId;
 import networking.util.NoAuth;

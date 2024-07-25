@@ -1,9 +1,9 @@
 package outgoing;
 
 
-import networking.packets.IPacketWriter;
 import networking.packets.IOutgoingPacket;
 import networking.packets.IPacketDTO;
+import networking.packets.IPacketWriter;
 
 public class PingComposer implements IOutgoingPacket<IPacketDTO> {
     @Override

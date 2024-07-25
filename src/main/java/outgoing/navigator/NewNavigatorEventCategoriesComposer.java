@@ -1,7 +1,7 @@
 package outgoing.navigator;
 
-import networking.packets.IPacketWriter;
 import networking.packets.IOutgoingPacket;
+import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.navigator.NewNavigatorEventCategoriesComposerDTO;
 

@@ -1,6 +1,5 @@
 package outgoing.rooms.prepare;
 
-import habbo.rooms.RoomRightLevel;
 import networking.packets.IOutgoingPacket;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;

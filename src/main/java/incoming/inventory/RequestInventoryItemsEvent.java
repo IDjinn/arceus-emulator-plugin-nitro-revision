@@ -3,7 +3,7 @@ package incoming.inventory;
 import com.google.inject.Singleton;
 import networking.client.IClient;
 import networking.packets.IIncomingPacket;
-import networking.packets.IncomingEvent;
+import incoming.IncomingEvent;
 import packets.incoming.IncomingHeaders;
 import packets.outgoing.inventory.InventoryItemsComposer;
 

@@ -19,7 +19,7 @@ public class RoomRelativeMapComposer implements IOutgoingPacket<RoomHeightMapCom
         for (int y = 0; y < gameMap.getMaxY(); y++) {
             for (int x = 0; x < gameMap.getMaxX(); x++) {
                 final var tile = gameMap.getTile(x, y);
-                this.gameMapSerializer.serializeTileHeight(writer, tile);
+                this.gameMapSerializer.serialize(writer, tile);
             }
         }
     }

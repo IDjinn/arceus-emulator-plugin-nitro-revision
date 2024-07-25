@@ -1,11 +1,10 @@
 package outgoing.inventory;
 
 import habbo.habbos.data.badges.IHabboBadge;
-import networking.packets.IPacketWriter;
 import networking.packets.IOutgoingPacket;
+import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.inventory.InventoryBadgesComposerDTO;
-import packets.outgoing.badges.UserBadgesComposer;
 
 public class InventoryBadgesComposer implements IOutgoingPacket<InventoryBadgesComposerDTO> {
     @Override

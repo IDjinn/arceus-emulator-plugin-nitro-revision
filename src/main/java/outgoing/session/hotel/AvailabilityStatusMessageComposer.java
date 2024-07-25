@@ -1,8 +1,8 @@
 package outgoing.session.hotel;
 
-import networking.packets.IPacketWriter;
 import networking.packets.IOutgoingPacket;
 import networking.packets.IPacketDTO;
+import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 
 public class AvailabilityStatusMessageComposer implements IOutgoingPacket<IPacketDTO> {

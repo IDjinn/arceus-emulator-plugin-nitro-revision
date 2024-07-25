@@ -4,7 +4,7 @@ import com.google.inject.Singleton;
 import habbo.rooms.components.objects.items.floor.IFloorItem;
 import networking.client.IClient;
 import networking.packets.IIncomingPacket;
-import networking.packets.IncomingEvent;
+import incoming.IncomingEvent;
 import packets.incoming.IncomingHeaders;
 import utils.pathfinder.Position;
 

@@ -1,14 +1,11 @@
 package outgoing.rooms.entities;
 
 import com.google.inject.Inject;
-import habbo.rooms.entities.IRoomEntity;
 import networking.packets.IOutgoingPacket;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.room.entities.RoomEntitiesStatusDTO;
 import serializers.rooms.entities.components.EntityStatusSerializer;
-
-import java.util.Collection;
 
 public class RoomEntitiesStatusComposer implements IOutgoingPacket<RoomEntitiesStatusDTO> {
     private @Inject EntityStatusSerializer entityStatusSerializer;

@@ -3,7 +3,7 @@ package incoming.rooms.entities;
 import habbo.rooms.components.gamemap.IRoomTile;
 import networking.client.IClient;
 import networking.packets.IIncomingPacket;
-import networking.packets.IncomingEvent;
+import incoming.IncomingEvent;
 import packets.incoming.IncomingHeaders;
 import utils.pathfinder.Position;
 

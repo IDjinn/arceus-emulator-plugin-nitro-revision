@@ -5,7 +5,7 @@ import com.google.inject.Singleton;
 import habbo.navigator.INavigatorManager;
 import networking.client.IClient;
 import networking.packets.IIncomingPacket;
-import networking.packets.IncomingEvent;
+import incoming.IncomingEvent;
 import packets.incoming.IncomingHeaders;
 
 @Singleton

@@ -1,8 +1,8 @@
 package outgoing.navigator;
 
 import habbo.habbos.data.navigator.IHabboNavigatorSearch;
-import networking.packets.IPacketWriter;
 import networking.packets.IOutgoingPacket;
+import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.navigator.NewNavigatorMetaDataComposerDTO;
 

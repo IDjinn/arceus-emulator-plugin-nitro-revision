@@ -1,8 +1,8 @@
 package outgoing.catalog;
 
 import com.google.inject.Inject;
-import networking.packets.IPacketWriter;
 import networking.packets.IOutgoingPacket;
+import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import outgoing.catalog.pages.CatalogPageItemsSerializer;
 import outgoing.catalog.pages.CatalogPageSerializer;
