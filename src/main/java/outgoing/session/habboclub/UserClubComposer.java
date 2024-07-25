@@ -3,12 +3,18 @@ package outgoing.session.habboclub;
 import networking.packets.IPacketDTO;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
+import packets.dto.outgoing.session.habboclub.UserClubComposerDTO;
 import packets.outgoing.session.habboclub.IUserClubComposer;
 
 
 public class UserClubComposer implements  IUserClubComposer {
     @Override
-    public void compose(IPacketWriter writer, IPacketDTO dto) {
+    public int getHeaderId() {
+        return OutgoingHeaders.UserClubComposer;
+    }
+
+    @Override
+    public void compose(IPacketWriter writer, UserClubComposerDTO dto) {
         writer.appendString("HABBO_CLUB".toLowerCase());
         writer.appendInt(0);
         writer.appendInt(0);
@@ -20,10 +26,5 @@ public class UserClubComposer implements  IUserClubComposer {
         writer.appendInt(0);
         writer.appendInt(0);
         writer.appendInt(0);
-    }
-
-    @Override
-    public int getHeaderId() {
-        return OutgoingHeaders.UserClubComposer;
     }
 }

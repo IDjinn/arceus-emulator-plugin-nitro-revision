@@ -1,4 +1,4 @@
-package outgoing.rooms.prepare;
+package outgoing.rooms.data;
 
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;

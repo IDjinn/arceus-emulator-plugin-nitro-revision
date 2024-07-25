@@ -3,12 +3,18 @@ package outgoing.session.logindata;
 import networking.packets.IPacketDTO;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
+import packets.dto.outgoing.session.logindata.UserPerksComposerDTO;
 import packets.outgoing.session.logindata.IUserPerksComposer;
 
 
 public class UserPerksComposer implements  IUserPerksComposer {
     @Override
-    public void compose(IPacketWriter writer, IPacketDTO dto) {
+    public int getHeaderId() {
+        return OutgoingHeaders.UserPerksComposer;
+    }
+
+    @Override
+    public void compose(IPacketWriter writer, UserPerksComposerDTO dto) {
         writer.appendInt(15);
 
         writer.appendString("USE_GUIDE_TOOL");
@@ -70,10 +76,5 @@ public class UserPerksComposer implements  IUserPerksComposer {
         writer.appendString("HABBO_CLUB_OFFER_BETA");
         writer.appendString("");
         writer.appendBoolean(true);
-    }
-
-    @Override
-    public int getHeaderId() {
-        return OutgoingHeaders.UserPerksComposer;
     }
 }

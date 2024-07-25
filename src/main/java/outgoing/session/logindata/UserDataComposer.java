@@ -2,13 +2,13 @@ package outgoing.session.logindata;
 
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
-import packets.dto.outgoing.session.logindata.UserDataDTO;
+import packets.dto.outgoing.session.logindata.UserDataComposerDTO;
 import packets.outgoing.session.logindata.IUserDataComposer;
 
 
 public class UserDataComposer implements  IUserDataComposer {
     @Override
-    public void compose(final IPacketWriter writer, final UserDataDTO dto) {
+    public void compose(final IPacketWriter writer, final UserDataComposerDTO dto) {
         final var habbo = dto.habbo();
 
         writer.appendInt(habbo.getData().getId());

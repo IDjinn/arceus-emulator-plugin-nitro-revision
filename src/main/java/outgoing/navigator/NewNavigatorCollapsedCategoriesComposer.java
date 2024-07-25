@@ -3,12 +3,18 @@ package outgoing.navigator;
 import networking.packets.IPacketDTO;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
+import packets.dto.outgoing.navigator.NewNavigatorCollapsedCategoriesComposerDTO;
 import packets.outgoing.navigator.INewNavigatorCollapsedCategoriesComposer;
 
 
 public class NewNavigatorCollapsedCategoriesComposer implements  INewNavigatorCollapsedCategoriesComposer {
     @Override
-    public void compose(IPacketWriter writer, IPacketDTO dto) {
+    public int getHeaderId() {
+        return OutgoingHeaders.NewNavigatorCollapsedCategoriesComposer;
+    }
+
+    @Override
+    public void compose(IPacketWriter writer, NewNavigatorCollapsedCategoriesComposerDTO dto) {
         writer.appendInt(46);
 
         writer.appendString("new_ads");
@@ -57,10 +63,5 @@ public class NewNavigatorCollapsedCategoriesComposer implements  INewNavigatorCo
         writer.appendString("eventcategory__Friending");
         writer.appendString("eventcategory__Jobs");
         writer.appendString("eventcategory__Group Events");
-    }
-
-    @Override
-    public int getHeaderId() {
-        return OutgoingHeaders.NewNavigatorCollapsedCategoriesComposer;
     }
 }

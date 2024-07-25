@@ -1,4 +1,4 @@
-package outgoing.rooms.prepare;
+package outgoing.rooms.data;
 
 import com.google.inject.Inject;
 import networking.packets.IPacketWriter;

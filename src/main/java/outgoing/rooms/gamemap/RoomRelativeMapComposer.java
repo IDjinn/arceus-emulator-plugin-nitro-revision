@@ -4,14 +4,21 @@ import com.google.inject.Inject;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
 import packets.dto.outgoing.room.gamemap.RoomHeightMapComposerDTO;
+import packets.dto.outgoing.room.gamemap.RoomRelativeMapComposerDTO;
 import packets.outgoing.rooms.gamemap.IRoomRelativeMapComposer;
 import serializers.rooms.gamemap.GameMapSerializer;
 
 
 public class RoomRelativeMapComposer implements  IRoomRelativeMapComposer {
     private @Inject GameMapSerializer gameMapSerializer;
+
     @Override
-    public void compose(IPacketWriter writer, RoomHeightMapComposerDTO dto) {
+    public int getHeaderId() {
+        return OutgoingHeaders.RoomRelativeMapComposer;
+    }
+
+    @Override
+    public void compose(IPacketWriter writer, RoomRelativeMapComposerDTO dto) {
         final var gameMap = dto.roomGameMap();
         writer.appendInt(gameMap.getMapSize() / gameMap.getMaxY());
         writer.appendInt(gameMap.getMapSize());
@@ -22,10 +29,5 @@ public class RoomRelativeMapComposer implements  IRoomRelativeMapComposer {
                 this.gameMapSerializer.serialize(writer, tile);
             }
         }
-    }
-
-    @Override
-    public int getHeaderId() {
-        return OutgoingHeaders.RoomRelativeMapComposer;
     }
 }

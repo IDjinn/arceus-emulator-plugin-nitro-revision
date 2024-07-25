@@ -3,18 +3,19 @@ package outgoing.session.hotel;
 import networking.packets.IPacketDTO;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
+import packets.dto.outgoing.session.hotel.AvailabilityStatusMessageComposerDTO;
 import packets.outgoing.session.hotel.IAvailabilityStatusMessageComposer;
 
 public class AvailabilityStatusMessageComposer implements  IAvailabilityStatusMessageComposer {
     @Override
-    public void compose(IPacketWriter writer, IPacketDTO dto) {
-        writer.appendBoolean(true);
-        writer.appendBoolean(false);
-        writer.appendBoolean(true);
+    public int getHeaderId() {
+        return OutgoingHeaders.AvailabilityStatusMessageComposer;
     }
 
     @Override
-    public int getHeaderId() {
-        return OutgoingHeaders.AvailabilityStatusMessageComposer;
+    public void compose(IPacketWriter writer, AvailabilityStatusMessageComposerDTO dto) {
+        writer.appendBoolean(true);
+        writer.appendBoolean(false);
+        writer.appendBoolean(true);
     }
 }
