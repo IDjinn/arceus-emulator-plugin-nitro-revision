@@ -1,12 +1,11 @@
-package outgoing.inventory;
+package serializers.items;
 
 import habbo.furniture.FurnitureType;
 import habbo.habbos.inventory.IHabboInventoryItem;
-import networking.packets.IPacketSerializer;
 import networking.packets.IPacketWriter;
-import packets.outgoing.inventory.IHabboInventoryItemSerializer;
+import networking.packets.outgoing.IOutgoingEvent;
 
-public class HabboInventoryItemSerializer implements IHabboInventoryItemSerializer {
+public class HabboInventoryItemSerializer implements networking.packets.outgoing.IOutgoingDTOSerializer<IHabboInventoryItem> {
     @Override
     public void serialize(IPacketWriter writer, IHabboInventoryItem dto) {
         writer.appendInt(dto.getId())
