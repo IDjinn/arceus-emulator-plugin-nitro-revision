@@ -1,38 +1,34 @@
 package outgoing.rooms.objects.floor;
 
+import com.google.inject.Inject;
 import habbo.furniture.FurnitureUsagePolicy;
 import habbo.rooms.components.objects.items.floor.IFloorItem;
 import networking.packets.IOutgoingPacket;
+import networking.packets.IPacketWriter;
+import outgoing.OutgoingHeaders;
+import packets.dto.outgoing.room.items.floor.RoomFloorItemsComposerDTO;
+import serializers.items.FloorItemSerializer;
+import serializers.items.OwnerItemListSerializer;
 
 import java.util.Collection;
 import java.util.List;
 
-public class RoomFloorItemsComposer extends IOutgoingPacket<U> {
-    public RoomFloorItemsComposer(List<String> owners, Collection<? extends IFloorItem> allItems) {
-        super(OutgoingHeaders.RoomFloorItemsComposer);
-        this.appendInt(owners.size());
-        for (var i = 0; i < owners.size(); i++) {
-            this.appendInt(i);
-            this.appendString(owners.get(i));
+public class RoomFloorItemsComposer implements IOutgoingPacket<RoomFloorItemsComposerDTO> {
+    private @Inject FloorItemSerializer floorItemSerializer;
+    private @Inject OwnerItemListSerializer ownerItemListSerializer;
+
+    @Override
+    public void compose(IPacketWriter writer, RoomFloorItemsComposerDTO dto) {
+        this.ownerItemListSerializer.serialize(writer, dto.owners());
+        
+        writer.appendInt(dto.allItems().size());
+        for (var item : dto.allItems()) {
+            this.floorItemSerializer.serialize(writer, item);
         }
+    }
 
-        this.appendInt(allItems.size());
-        for (var item : allItems) {
-            item.serializeItemIdentity(this);
-            item.serializePosition(this);
-
-            this.appendInt(1, "gift, song or something. It seems to be the extraData state (integer) of legacy data"); // TODO
-
-            item.getExtraData().serialize(this);
-            this.appendInt(-1, "expiration timeout");
-            this.appendInt(FurnitureUsagePolicy.Controller.ordinal()); // TODO:FURNITURE USAGE
-
-            if (item.getOwnerData() != null && item.getOwnerData().isPresent()) {
-                var owner = item.getOwnerData().get();
-                this.appendInt(owner.getId());
-            } else {
-                this.appendInt(0);
-            }
-        }
+    @Override
+    public int getHeaderId() {
+        return OutgoingHeaders.RoomFloorItemsComposer;
     }
 }

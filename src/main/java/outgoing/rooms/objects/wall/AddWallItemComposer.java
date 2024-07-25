@@ -1,20 +1,25 @@
 package outgoing.rooms.objects.wall;
 
+import com.google.inject.Inject;
 import habbo.furniture.FurnitureUsagePolicy;
 import habbo.rooms.components.objects.items.wall.IWallItem;
 import networking.packets.IOutgoingPacket;
+import networking.packets.IPacketWriter;
+import outgoing.OutgoingHeaders;
+import packets.dto.outgoing.room.items.wall.AddWallItemComposerDTO;
+import serializers.items.WallItemSerializer;
 
 
-public class AddWallItemComposer extends IOutgoingPacket<U> {
+public class AddWallItemComposer implements IOutgoingPacket<AddWallItemComposerDTO> {
+    private @Inject WallItemSerializer wallItemSerializer;
 
-    public AddWallItemComposer(IWallItem wallItem) {
-        super(OutgoingHeaders.AddWallItemComposer);
-        wallItem.serializeItemIdentity(this);
-        wallItem.serializePosition(this);
-        wallItem.getExtraData().serializeState(this);
-        this.appendInt(-1, "rent?");
-        this.appendInt(FurnitureUsagePolicy.Everyone.ordinal()); // TODO
-        this.appendInt(wallItem.getOwnerData().isPresent() ? wallItem.getOwnerData().get().getId() : -1);
-        this.appendString(wallItem.getOwnerData().isPresent() ? wallItem.getOwnerData().get().getUsername() : "");
+    @Override
+    public void compose(IPacketWriter writer, AddWallItemComposerDTO dto) {
+        this.wallItemSerializer.serialize(writer, dto.wallItem());
+    }
+
+    @Override
+    public int getHeaderId() {
+        return OutgoingHeaders.AddWallItemComposer;
     }
 }

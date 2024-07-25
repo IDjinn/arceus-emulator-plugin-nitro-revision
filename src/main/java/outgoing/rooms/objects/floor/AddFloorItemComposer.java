@@ -1,21 +1,24 @@
 package outgoing.rooms.objects.floor;
 
+import com.google.inject.Inject;
 import habbo.furniture.FurnitureUsagePolicy;
 import habbo.rooms.components.objects.items.floor.IFloorItem;
 import networking.packets.IOutgoingPacket;
+import networking.packets.IPacketWriter;
+import outgoing.OutgoingHeaders;
+import packets.dto.outgoing.room.items.floor.AddFloorItemComposerDTO;
+import serializers.items.FloorItemSerializer;
 
 
-public class AddFloorItemComposer extends IOutgoingPacket<U> {
-    public AddFloorItemComposer(IFloorItem floorItem) {
-        super(OutgoingHeaders.AddFloorItemComposer);
+public class AddFloorItemComposer implements IOutgoingPacket<AddFloorItemComposerDTO> {
+    private @Inject FloorItemSerializer floorItemSerializer;
+    @Override
+    public void compose(IPacketWriter writer, AddFloorItemComposerDTO dto) {
+        this.floorItemSerializer.serialize(writer, dto.floorItem());
+    }
 
-        floorItem.serializeItemIdentity(this);
-        floorItem.serializePosition(this);
-        this.appendInt(1, "gift stuff (extra data as int?)");
-        floorItem.getExtraData().serialize(this);
-        this.appendInt(-1, "expires at");
-        this.appendInt(FurnitureUsagePolicy.Everyone.ordinal());
-        this.appendInt(floorItem.getOwnerData().isPresent() ? floorItem.getOwnerData().get().getId() : 0);
-        this.appendString(floorItem.getRoom().getData().isPublic() || floorItem.getOwnerData().isEmpty() ? "admin" : floorItem.getOwnerData().get().getUsername());
+    @Override
+    public int getHeaderId() {
+        return OutgoingHeaders.AddFloorItemComposer;
     }
 }

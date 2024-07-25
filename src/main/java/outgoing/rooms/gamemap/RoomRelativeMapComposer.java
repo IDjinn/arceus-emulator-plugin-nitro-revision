@@ -1,38 +1,31 @@
 package outgoing.rooms.gamemap;
 
-import habbo.rooms.components.gamemap.IRoomGameMap;
-import habbo.rooms.components.gamemap.IRoomTile;
+import com.google.inject.Inject;
 import networking.packets.IOutgoingPacket;
+import networking.packets.IPacketWriter;
+import outgoing.OutgoingHeaders;
+import packets.dto.outgoing.room.gamemap.RoomHeightMapComposerDTO;
+import serializers.rooms.gamemap.GameMapSerializer;
 
 
-public class RoomRelativeMapComposer extends IOutgoingPacket<U> {
-    private static final int STACKING_BLOCKED_FLAG = 0x4000;
-    private static final int ENCODE_HEIGHT_FLAG = 0x0100;
-    private static final int HEIGHT_FLAG = 0x4000;
-
-    public RoomRelativeMapComposer(IRoomGameMap gameMap) {
-        super(OutgoingHeaders.RoomRelativeMapComposer);
-        this.appendInt(gameMap.getMapSize() / gameMap.getMaxY());
-        this.appendInt(gameMap.getMapSize());
+public class RoomRelativeMapComposer implements IOutgoingPacket<RoomHeightMapComposerDTO> {
+    private @Inject GameMapSerializer gameMapSerializer;
+    @Override
+    public void compose(IPacketWriter writer, RoomHeightMapComposerDTO dto) {
+        final var gameMap = dto.roomGameMap();
+        writer.appendInt(gameMap.getMapSize() / gameMap.getMaxY());
+        writer.appendInt(gameMap.getMapSize());
 
         for (int y = 0; y < gameMap.getMaxY(); y++) {
             for (int x = 0; x < gameMap.getMaxX(); x++) {
                 final var tile = gameMap.getTile(x, y);
-                serializeTileHeight(this, tile);
+                this.gameMapSerializer.serializeTileHeight(writer, tile);
             }
         }
     }
 
-    private static int encodeTileHeight(double height) {
-        return (int) (height * ENCODE_HEIGHT_FLAG);
-    }
-
-    public static void serializeTileHeight(final IOutgoingPacket<U> packet, final IRoomTile tile) {
-        final var relativeMapHeight = tile.getRelativeMapHeight();
-        if (relativeMapHeight.isPresent()) {
-            packet.appendShort(encodeTileHeight(relativeMapHeight.get()));
-        } else {
-            packet.appendShort(tile.getZ() | STACKING_BLOCKED_FLAG);
-        }
+    @Override
+    public int getHeaderId() {
+        return OutgoingHeaders.RoomRelativeMapComposer;
     }
 }

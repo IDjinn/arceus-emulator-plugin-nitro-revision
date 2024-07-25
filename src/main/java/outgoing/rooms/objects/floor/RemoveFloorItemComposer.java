@@ -2,19 +2,22 @@ package outgoing.rooms.objects.floor;
 
 import habbo.rooms.components.objects.items.floor.IFloorItem;
 import networking.packets.IOutgoingPacket;
+import networking.packets.IPacketWriter;
+import outgoing.OutgoingHeaders;
+import packets.dto.outgoing.room.items.floor.RemoveFloorItemComposerDTO;
 
 
-public class RemoveFloorItemComposer extends IOutgoingPacket<U> {
-    public RemoveFloorItemComposer(IFloorItem floorItem, int pickupPlayerId, int delay) {
-        super(OutgoingHeaders.RemoveFloorItemComposer);
-
-        this.appendString(String.valueOf(floorItem.getVirtualId()));
-        this.appendBoolean(false, "isExpired");
-        this.appendInt(pickupPlayerId);
-        this.appendInt(delay);
+public class RemoveFloorItemComposer implements IOutgoingPacket<RemoveFloorItemComposerDTO> {
+    @Override
+    public void compose(IPacketWriter writer, RemoveFloorItemComposerDTO dto) {
+        writer.appendString(String.valueOf(dto.floorItem().getVirtualId()));
+        writer.appendBoolean(false, "isExpired");
+        writer.appendInt(dto.pickupPlayerId());
+        writer.appendInt(dto.delay());
     }
 
-    public RemoveFloorItemComposer(IFloorItem floorItem, int pickupPlayerId) {
-        this(floorItem, pickupPlayerId, 0);
+    @Override
+    public int getHeaderId() {
+        return OutgoingHeaders.RemoveFloorItemComposer;
     }
 }
