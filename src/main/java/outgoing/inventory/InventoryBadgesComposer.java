@@ -11,7 +11,7 @@ public class InventoryBadgesComposer implements  IInventoryBadgesComposer {
     @Override
     public void compose(IPacketWriter writer, InventoryBadgesComposerDTO dto) {
         writer.appendInt(dto.badges().size());
-        for (IHabboBadge badge : dto.badges().values()) {
+        for (final var badge : dto.badges().values()) {
             writer.appendInt(badge.getSlot().orElse(0));
             writer.appendString(badge.getCode());
         }

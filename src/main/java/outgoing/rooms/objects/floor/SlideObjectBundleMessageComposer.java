@@ -1,53 +1,21 @@
 package outgoing.rooms.objects.floor;
 
-import networking.packets.outgoing.IOutgoingDTOSerializer;
+import com.google.inject.Inject;
+import networking.packets.IPacketWriter;
+import outgoing.OutgoingHeaders;
 import packets.outgoing.rooms.objects.floor.ISlideObjectBundleMessageComposer;
-import utils.pathfinder.Position;
+import packets.outgoing.rooms.objects.floor.slide.SlideObjectBundleDTO;
+import serializers.items.SlideObjectSerializer;
 
-import java.util.Collection;
-
-public class SlideObjectBundleMessageComposer extends IOutgoingDTOSerializer<U> implements ISlideObjectBundleMessageComposer {
-
-    public SlideObjectBundleMessageComposer(Position oldPosition, Position nextPosition, Collection<SlideObjectEntry> objects,
-                                            int rollerId) {
-        super(OutgoingHeaders.SlideObjectBundleMessageComposer);
-
-        this.appendInt(oldPosition.getX());
-        this.appendInt(oldPosition.getY());
-
-        this.appendInt(nextPosition.getX());
-        this.appendInt(nextPosition.getY());
-
-        this.appendInt(objects.size());
-        for (var object : objects) {
-            this.appendInt(object.virutalId);
-            this.appendString(String.valueOf(object.oldPosition().getZ()));
-            this.appendString(String.valueOf(object.newPosition().getZ()));
-        }
-        this.appendInt(rollerId);
+public class SlideObjectBundleMessageComposer implements ISlideObjectBundleMessageComposer {
+    private @Inject SlideObjectSerializer slideObjectSerializer;
+    @Override
+    public void compose(IPacketWriter writer, SlideObjectBundleDTO dto) {
+        this.slideObjectSerializer.serialize(writer, dto);
     }
 
-    public SlideObjectBundleMessageComposer(
-            SlideObjectEntry entityEntry,
-            RollerMovementType movementType,
-            Position oldPosition, Position nextPosition,
-            Collection<SlideObjectEntry> objects,
-            int rollerId
-    ) {
-        this(oldPosition, nextPosition, objects, rollerId);
-
-        this.appendInt(movementType.ordinal());
-        this.appendInt(entityEntry.virutalId);
-        this.appendString(String.valueOf(oldPosition.getZ()));
-        this.appendString(String.valueOf(nextPosition.getZ()));
-    }
-
-    public enum RollerMovementType {
-        None,
-        Move,
-        Slide
-    }
-
-    public record SlideObjectEntry(int virutalId, Position oldPosition, Position newPosition) {
+    @Override
+    public int getHeaderId() {
+        return OutgoingHeaders.SlideObjectBundleMessageComposer;
     }
 }
