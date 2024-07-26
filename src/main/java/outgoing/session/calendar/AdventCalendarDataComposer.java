@@ -7,7 +7,7 @@ import packets.dto.outgoing.session.calendar.AdventCalendarDataComposerDTO;
 import packets.outgoing.session.calendar.IAdventCalendarDataComposer;
 
 
-public class AdventCalendarDataComposer implements  IAdventCalendarDataComposer {
+public class AdventCalendarDataComposer implements IAdventCalendarDataComposer {
     @Override
     public int getHeaderId() {
         return OutgoingHeaders.AdventCalendarDataComposer;
