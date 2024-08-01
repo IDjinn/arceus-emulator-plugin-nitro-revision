@@ -5,7 +5,7 @@ import habbo.rooms.components.objects.items.floor.IFloorItem;
 import networking.client.IClient;
 import networking.packets.incoming.IIncomingPacket;
 import incoming.IncomingEvent;
-import packets.incoming.IncomingHeaders;
+import incoming.IncomingHeaders;
 import utils.pathfinder.Position;
 
 @Singleton

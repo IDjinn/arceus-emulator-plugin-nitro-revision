@@ -14,7 +14,7 @@ public class UserClubComposer implements  IUserClubComposer {
     }
 
     @Override
-    public void compose(IPacketWriter writer, UserClubComposerDTO dto) {
+    public void encode(IPacketWriter writer, UserClubComposerDTO dto) {
         writer.appendString("HABBO_CLUB".toLowerCase());
         writer.appendInt(0);
         writer.appendInt(0);

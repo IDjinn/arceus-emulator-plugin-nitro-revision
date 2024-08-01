@@ -10,7 +10,7 @@ import serializers.items.SlideObjectSerializer;
 public class SlideObjectBundleMessageComposer implements ISlideObjectBundleMessageComposer {
     private @Inject SlideObjectSerializer slideObjectSerializer;
     @Override
-    public void compose(IPacketWriter writer, SlideObjectBundleDTO dto) {
+    public void encode(IPacketWriter writer, SlideObjectBundleDTO dto) {
         this.slideObjectSerializer.serialize(writer, dto);
     }
 

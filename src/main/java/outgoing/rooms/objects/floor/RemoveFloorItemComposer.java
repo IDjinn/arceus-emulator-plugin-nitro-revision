@@ -8,7 +8,7 @@ import packets.outgoing.rooms.objects.floor.IRemoveFloorItemComposer;
 
 public class RemoveFloorItemComposer implements  IRemoveFloorItemComposer {
     @Override
-    public void compose(IPacketWriter writer, RemoveFloorItemComposerDTO dto) {
+    public void encode(IPacketWriter writer, RemoveFloorItemComposerDTO dto) {
         writer.appendString(String.valueOf(dto.floorItem().getVirtualId()));
         writer.appendBoolean(false, "isExpired");
         writer.appendInt(dto.pickupPlayerId());

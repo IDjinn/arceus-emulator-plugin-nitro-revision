@@ -4,7 +4,7 @@ import com.google.inject.Singleton;
 import networking.client.IClient;
 import networking.packets.incoming.IIncomingPacket;
 import incoming.IncomingEvent;
-import packets.incoming.IncomingHeaders;
+import incoming.IncomingHeaders;
 
 @Singleton
 public class RoomUserWhisperEvent extends IncomingEvent {

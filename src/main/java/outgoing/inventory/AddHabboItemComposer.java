@@ -7,7 +7,7 @@ import packets.outgoing.inventory.IAddHabboItemComposer;
 
 public class AddHabboItemComposer implements IAddHabboItemComposer {
     @Override
-    public void compose(IPacketWriter writer, AddHabboItemComposerDTO dto) {
+    public void encode(IPacketWriter writer, AddHabboItemComposerDTO dto) {
         writer.appendInt(1, "total unseen categories");
         writer.appendInt(dto.category().ordinal());
         writer.appendInt(dto.itemIds().size());

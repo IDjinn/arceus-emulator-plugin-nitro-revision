@@ -14,7 +14,7 @@ public class UserPermissionsComposer implements  IUserPermissionsComposer {
     }
 
     @Override
-    public void compose(IPacketWriter writer, UserPermissionsComposerDTO dto) {
+    public void encode(IPacketWriter writer, UserPermissionsComposerDTO dto) {
         writer.appendInt(2);
         writer.appendInt(1);
         writer.appendBoolean(false);

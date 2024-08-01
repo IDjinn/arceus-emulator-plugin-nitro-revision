@@ -14,7 +14,7 @@ public class SecureLoginOkComposer implements ISecureLoginOkComposer {
     }
 
     @Override
-    public void compose(IPacketWriter writer, SecureLoginOkComposerDTO dto) {
+    public void encode(IPacketWriter writer, SecureLoginOkComposerDTO dto) {
         
     }
 }

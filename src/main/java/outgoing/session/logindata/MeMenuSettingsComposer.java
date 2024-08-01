@@ -13,7 +13,7 @@ public class MeMenuSettingsComposer implements  IMeMenuSettingsComposer { // TOD
     }
 
     @Override
-    public void compose(IPacketWriter writer, MeMenuSettingsComposerDTO dto) {
+    public void encode(IPacketWriter writer, MeMenuSettingsComposerDTO dto) {
         writer.appendInt(100);
         writer.appendInt(100);
         writer.appendInt(100);

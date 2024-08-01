@@ -8,7 +8,7 @@ import packets.outgoing.session.rooms.IFavoriteRoomsCountComposer;
 
 public class FavoriteRoomsCountComposer implements IFavoriteRoomsCountComposer {
     @Override
-    public void compose(IPacketWriter writer, FavoriteRoomsCountComposerDTO dto) {
+    public void encode(IPacketWriter writer, FavoriteRoomsCountComposerDTO dto) {
         writer.appendInt(30);
         writer.appendInt(0);
     }

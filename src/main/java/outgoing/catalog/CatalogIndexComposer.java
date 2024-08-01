@@ -8,7 +8,7 @@ import packets.outgoing.catalog.ICatalogIndexComposer;
 
 public class CatalogIndexComposer implements ICatalogIndexComposer {
     @Override
-    public void compose(IPacketWriter writer, CatalogIndexComposerDTO dto) {
+    public void encode(IPacketWriter writer, CatalogIndexComposerDTO dto) {
         writer.appendBoolean(true, "isVisible");
         writer.appendInt(0, "icon");
         writer.appendInt(-1, "page_id");

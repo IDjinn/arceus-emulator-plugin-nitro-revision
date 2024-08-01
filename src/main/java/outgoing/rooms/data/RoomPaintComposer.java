@@ -8,7 +8,7 @@ import packets.outgoing.rooms.data.IRoomPaintComposer;
 
 public class RoomPaintComposer implements  IRoomPaintComposer {
     @Override
-    public void compose(IPacketWriter writer, RoomPaintComposerDTO dto) {
+    public void encode(IPacketWriter writer, RoomPaintComposerDTO dto) {
         writer.appendString(dto.type());
         writer.appendString(dto.value());
     }

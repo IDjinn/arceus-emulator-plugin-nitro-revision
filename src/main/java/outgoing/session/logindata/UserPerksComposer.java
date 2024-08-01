@@ -14,7 +14,7 @@ public class UserPerksComposer implements  IUserPerksComposer {
     }
 
     @Override
-    public void compose(IPacketWriter writer, UserPerksComposerDTO dto) {
+    public void encode(IPacketWriter writer, UserPerksComposerDTO dto) {
         writer.appendInt(15);
 
         writer.appendString("USE_GUIDE_TOOL");

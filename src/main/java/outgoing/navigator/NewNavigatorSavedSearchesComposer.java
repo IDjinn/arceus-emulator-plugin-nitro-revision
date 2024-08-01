@@ -7,7 +7,7 @@ import packets.outgoing.navigator.INewNavigatorSavedSearchesComposer;
 
 public class NewNavigatorSavedSearchesComposer implements  INewNavigatorSavedSearchesComposer {
     @Override
-    public void compose(IPacketWriter writer, NewNavigatorSavedSearchesComposerDTO dto) {
+    public void encode(IPacketWriter writer, NewNavigatorSavedSearchesComposerDTO dto) {
         writer.appendInt(dto.searches().size());
         for (final var search : dto.searches()) {
             writer.appendInt(search.getId());

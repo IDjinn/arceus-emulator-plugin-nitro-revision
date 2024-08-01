@@ -15,7 +15,7 @@ public class HideDoorbellComposer implements  IHideDoorbellComposer {
     }
 
     @Override
-    public void compose(IPacketWriter writer, HideDoorbellComposerDTO dto) {
+    public void encode(IPacketWriter writer, HideDoorbellComposerDTO dto) {
         
     }
 }

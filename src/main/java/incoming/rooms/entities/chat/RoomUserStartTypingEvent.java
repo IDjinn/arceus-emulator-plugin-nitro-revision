@@ -4,8 +4,7 @@ import com.google.inject.Singleton;
 import networking.client.IClient;
 import networking.packets.incoming.IIncomingPacket;
 import incoming.IncomingEvent;
-import packets.incoming.IncomingHeaders;
-import packets.outgoing.rooms.entities.chat.RoomUserTypingComposer;
+import incoming.IncomingHeaders;
 
 @Singleton
 public class RoomUserStartTypingEvent extends IncomingEvent {
@@ -22,7 +21,7 @@ public class RoomUserStartTypingEvent extends IncomingEvent {
             return;
 
         client.getHabbo().getRoom().broadcastMessage(
-                new RoomUserTypingComposer(client.getHabbo().getPlayerEntity(),
+                new RoomUserTypingComposerDTO(client.getHabbo().getPlayerEntity(),
                         true
                 ));
     }

@@ -14,6 +14,6 @@ public class HotelViewComposer implements  IHotelViewComposer {
     }
 
     @Override
-    public void compose(IPacketWriter writer, HotelViewComposerDTO dto) {
+    public void encode(IPacketWriter writer, HotelViewComposerDTO dto) {
     }
 }

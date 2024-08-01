@@ -8,7 +8,7 @@ import packets.outgoing.navigator.INewNavigatorSearchResultsComposer;
 
 public class NewNavigatorSearchResultsComposer implements  INewNavigatorSearchResultsComposer {
     @Override
-    public void compose(IPacketWriter writer, NewNavigatorSearchResultsComposerDTO dto) {
+    public void encode(IPacketWriter writer, NewNavigatorSearchResultsComposerDTO dto) {
         writer.appendString(dto.code());
         writer.appendString(dto.query());
         

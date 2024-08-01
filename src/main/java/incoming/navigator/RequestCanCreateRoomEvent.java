@@ -3,8 +3,8 @@ package incoming.navigator;
 import networking.client.IClient;
 import networking.packets.incoming.IIncomingPacket;
 import incoming.IncomingEvent;
-import packets.incoming.IncomingHeaders;
-import packets.outgoing.navigator.CanCreateRoomComposer;
+import incoming.IncomingHeaders;
+import packets.dto.outgoing.navigator.CanCreateRoomComposerDTO;
 
 public class RequestCanCreateRoomEvent extends IncomingEvent {
     @Override
@@ -14,6 +14,6 @@ public class RequestCanCreateRoomEvent extends IncomingEvent {
 
     @Override
     public void parse(IIncomingPacket packet, IClient client) {
-        client.sendMessage(new CanCreateRoomComposer());
+        client.sendMessage(new CanCreateRoomComposerDTO());
     }
 }

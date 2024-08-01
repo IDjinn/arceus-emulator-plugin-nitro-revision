@@ -14,7 +14,7 @@ public class NewNavigatorLiftedRoomsComposer implements  INewNavigatorLiftedRoom
     }
 
     @Override
-    public void compose(IPacketWriter writer, NewNavigatorLiftedRoomsComposerDTO dto) {
+    public void encode(IPacketWriter writer, NewNavigatorLiftedRoomsComposerDTO dto) {
         writer.appendInt(0);
     }
 }

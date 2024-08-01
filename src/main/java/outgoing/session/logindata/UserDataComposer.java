@@ -8,7 +8,7 @@ import packets.outgoing.session.logindata.IUserDataComposer;
 
 public class UserDataComposer implements  IUserDataComposer {
     @Override
-    public void compose(final IPacketWriter writer, final UserDataComposerDTO dto) {
+    public void encode(final IPacketWriter writer, final UserDataComposerDTO dto) {
         final var habbo = dto.habbo();
 
         writer.appendInt(habbo.getData().getId());

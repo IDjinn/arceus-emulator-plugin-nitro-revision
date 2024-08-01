@@ -14,7 +14,7 @@ public class NewNavigatorCollapsedCategoriesComposer implements  INewNavigatorCo
     }
 
     @Override
-    public void compose(IPacketWriter writer, NewNavigatorCollapsedCategoriesComposerDTO dto) {
+    public void encode(IPacketWriter writer, NewNavigatorCollapsedCategoriesComposerDTO dto) {
         writer.appendInt(46);
 
         writer.appendString("new_ads");

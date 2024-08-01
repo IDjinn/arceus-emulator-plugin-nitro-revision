@@ -5,8 +5,8 @@ import networking.client.IClient;
 import networking.packets.incoming.IIncomingPacket;
 import incoming.IncomingEvent;
 import networking.util.NoAuth;
-import packets.incoming.IncomingHeaders;
-import packets.outgoing.PingComposer;
+import incoming.IncomingHeaders;
+import packets.dto.outgoing.session.PingComposerDTO;
 
 @Singleton
 @NoAuth
@@ -18,6 +18,6 @@ public class PingEvent extends IncomingEvent {
 
     @Override
     public void parse(IIncomingPacket packet, IClient client) {
-        client.sendMessage(new PingComposer());
+        client.sendMessage(new PingComposerDTO());
     }
 }

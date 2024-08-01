@@ -4,8 +4,8 @@ import com.google.inject.Singleton;
 import networking.client.IClient;
 import networking.packets.incoming.IIncomingPacket;
 import incoming.IncomingEvent;
-import packets.incoming.IncomingHeaders;
-import packets.outgoing.inventory.InventoryItemsComposer;
+import incoming.IncomingHeaders;
+import packets.dto.outgoing.inventory.InventoryItemsComposerDTO;
 
 @Singleton
 public class RequestInventoryItemsEvent extends IncomingEvent {
@@ -21,7 +21,7 @@ public class RequestInventoryItemsEvent extends IncomingEvent {
         var allItems = client.getHabbo().getInventory().getItems().values().stream().toList();
         final var totalFragments = Math.max((int) Math.ceil((double) allItems.size() / InventoryPageSize), 1);
         for (int i = 1; i <= totalFragments; i++) {
-            client.sendMessages(new InventoryItemsComposer(totalFragments, i, allItems));
+            client.sendMessages(new InventoryItemsComposerDTO(totalFragments, i, allItems));
         }
     }
 }

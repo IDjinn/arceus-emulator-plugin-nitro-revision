@@ -4,9 +4,11 @@ import com.google.inject.Singleton;
 import networking.client.IClient;
 import networking.packets.incoming.IIncomingPacket;
 import incoming.IncomingEvent;
-import packets.incoming.IncomingHeaders;
-import packets.outgoing.purse.UserCreditsComposer;
-import packets.outgoing.purse.UserCurrencyComposer;
+import incoming.IncomingHeaders;
+import packets.dto.outgoing.purse.UserCreditsComposerDTO;
+import packets.dto.outgoing.purse.UserCurrencyComposerDTO;
+
+import java.util.Collections;
 
 @Singleton
 public class RequestUserCreditsEvent extends IncomingEvent {
@@ -18,8 +20,8 @@ public class RequestUserCreditsEvent extends IncomingEvent {
     @Override
     public void parse(IIncomingPacket packet, IClient client) {
         client.sendMessages(
-                new UserCreditsComposer(client.getHabbo()),
-                new UserCurrencyComposer(client.getHabbo())
+                new UserCreditsComposerDTO(client.getHabbo().getData().getCredits()),
+                new UserCurrencyComposerDTO(Collections.emptySet())
         );
     }
 }

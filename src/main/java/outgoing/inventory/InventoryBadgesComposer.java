@@ -7,7 +7,7 @@ import packets.outgoing.inventory.IInventoryBadgesComposer;
 
 public class InventoryBadgesComposer implements  IInventoryBadgesComposer {
     @Override
-    public void compose(IPacketWriter writer, InventoryBadgesComposerDTO dto) {
+    public void encode(IPacketWriter writer, InventoryBadgesComposerDTO dto) {
         writer.appendInt(dto.badges().size());
         for (final var badge : dto.badges().values()) {
             writer.appendInt(badge.getSlot().orElse(0));

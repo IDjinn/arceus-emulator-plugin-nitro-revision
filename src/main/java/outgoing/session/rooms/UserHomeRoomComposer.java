@@ -9,7 +9,7 @@ import packets.outgoing.session.rooms.IUserHomeRoomComposer;
 
 public class UserHomeRoomComposer implements IUserHomeRoomComposer {
     @Override
-    public void compose(IPacketWriter writer, UserHomeRoomComposerDTO dto) {
+    public void encode(IPacketWriter writer, UserHomeRoomComposerDTO dto) {
        writer.appendInt(0,"homeRoom");
        writer.appendInt(0,"roomToEnter");
     }

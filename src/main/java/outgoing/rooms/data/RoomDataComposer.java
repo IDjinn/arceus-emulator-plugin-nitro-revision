@@ -11,7 +11,7 @@ import serializers.rooms.RoomSerializer;
 public class RoomDataComposer implements  IRoomDataComposer {
     private @Inject RoomSerializer roomSerializer;
     @Override
-    public void compose(IPacketWriter writer, RoomDataComposerDTO dto) {
+    public void encode(IPacketWriter writer, RoomDataComposerDTO dto) {
         this.roomSerializer.serialize(writer, dto.room());
 
         writer.appendBoolean(dto.roomForward());

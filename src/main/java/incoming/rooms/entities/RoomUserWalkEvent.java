@@ -4,7 +4,7 @@ import habbo.rooms.components.gamemap.IRoomTile;
 import networking.client.IClient;
 import networking.packets.incoming.IIncomingPacket;
 import incoming.IncomingEvent;
-import packets.incoming.IncomingHeaders;
+import incoming.IncomingHeaders;
 import utils.pathfinder.Position;
 
 public class RoomUserWalkEvent extends IncomingEvent {

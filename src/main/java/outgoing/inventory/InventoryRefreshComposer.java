@@ -15,7 +15,7 @@ public class InventoryRefreshComposer implements  IInventoryRefreshComposer {
     }
 
     @Override
-    public void compose(IPacketWriter writer, InventoryRefreshComposerDTO dto) {
+    public void encode(IPacketWriter writer, InventoryRefreshComposerDTO dto) {
         
     }
 }

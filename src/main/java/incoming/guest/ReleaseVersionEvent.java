@@ -7,7 +7,7 @@ import incoming.IncomingEvent;
 import networking.util.GameNetowrkingAttributes;
 import networking.util.NoAuth;
 import networking.util.ReleaseVersion;
-import packets.incoming.IncomingHeaders;
+import incoming.IncomingHeaders;
 
 @Singleton
 @NoAuth

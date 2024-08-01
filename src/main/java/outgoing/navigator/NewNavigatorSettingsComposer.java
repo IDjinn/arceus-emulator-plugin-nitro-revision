@@ -14,7 +14,7 @@ public class NewNavigatorSettingsComposer implements  INewNavigatorSettingsCompo
     }
 
     @Override
-    public void compose(IPacketWriter writer, NewNavigatorSettingsComposerDTO settings) {
+    public void encode(IPacketWriter writer, NewNavigatorSettingsComposerDTO settings) {
         writer.appendInt(settings.windowX());
         writer.appendInt(settings.windowY());
         writer.appendInt(settings.windowWidth());

@@ -4,10 +4,10 @@ import com.google.inject.Singleton;
 import networking.client.IClient;
 import networking.packets.incoming.IIncomingPacket;
 import incoming.IncomingEvent;
-import packets.incoming.IncomingHeaders;
-import packets.outgoing.session.logindata.MeMenuSettingsComposer;
-import packets.outgoing.session.logindata.UserDataComposer;
-import packets.outgoing.session.logindata.UserPerksComposer;
+import incoming.IncomingHeaders;
+import packets.dto.outgoing.session.logindata.MeMenuSettingsComposerDTO;
+import packets.dto.outgoing.session.logindata.UserDataComposerDTO;
+import packets.dto.outgoing.session.logindata.UserPerksComposerDTO;
 
 @Singleton
 public class RequestUserDataEvent extends IncomingEvent {
@@ -19,9 +19,9 @@ public class RequestUserDataEvent extends IncomingEvent {
     @Override
     public void parse(IIncomingPacket packet, IClient client) {
         client.sendMessages(
-                new UserDataComposer(client.getHabbo()),
-                new UserPerksComposer(client.getHabbo()),
-                new MeMenuSettingsComposer(client.getHabbo())
+                new UserDataComposerDTO(client.getHabbo()),
+                new UserPerksComposerDTO(),
+                new MeMenuSettingsComposerDTO()
         );
     }
 }

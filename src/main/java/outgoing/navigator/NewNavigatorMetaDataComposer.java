@@ -8,7 +8,7 @@ import packets.outgoing.navigator.INewNavigatorMetaDataComposer;
 
 public class NewNavigatorMetaDataComposer implements  INewNavigatorMetaDataComposer {
     @Override
-    public void compose(IPacketWriter writer, NewNavigatorMetaDataComposerDTO dto) {
+    public void encode(IPacketWriter writer, NewNavigatorMetaDataComposerDTO dto) {
         writer.appendInt(NewNavigatorMetaDataComposerDTO.tabs.length);
         for (String tabName : NewNavigatorMetaDataComposerDTO.tabs) {
             writer.appendString(tabName);

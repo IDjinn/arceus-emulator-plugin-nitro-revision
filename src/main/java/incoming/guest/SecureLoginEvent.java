@@ -8,7 +8,7 @@ import networking.client.IClientManager;
 import networking.packets.incoming.IIncomingPacket;
 import incoming.IncomingEvent;
 import networking.util.NoAuth;
-import packets.incoming.IncomingHeaders;
+import incoming.IncomingHeaders;
 
 @Singleton
 @NoAuth

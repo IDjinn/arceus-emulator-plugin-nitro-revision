@@ -11,7 +11,7 @@ import serializers.items.WallItemSerializer;
 public class WallItemUpdateComposer implements  IWallItemUpdateComposer {
     private @Inject WallItemSerializer wallItemSerializer;
     @Override
-    public void compose(IPacketWriter writer, WallItemUpdateComposerDTO dto) {]
+    public void encode(IPacketWriter writer, WallItemUpdateComposerDTO dto) {
         this.wallItemSerializer.serialize(writer, dto.wallItem());
     }
 

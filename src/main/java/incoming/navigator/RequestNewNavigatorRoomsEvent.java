@@ -7,7 +7,7 @@ import habbo.navigator.services.INavigatorSearchService;
 import networking.client.IClient;
 import networking.packets.incoming.IIncomingPacket;
 import incoming.IncomingEvent;
-import packets.incoming.IncomingHeaders;
+import incoming.IncomingHeaders;
 
 @Singleton
 public class RequestNewNavigatorRoomsEvent extends IncomingEvent {

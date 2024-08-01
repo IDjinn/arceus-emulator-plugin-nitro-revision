@@ -13,7 +13,7 @@ public class AvailabilityStatusMessageComposer implements  IAvailabilityStatusMe
     }
 
     @Override
-    public void compose(IPacketWriter writer, AvailabilityStatusMessageComposerDTO dto) {
+    public void encode(IPacketWriter writer, AvailabilityStatusMessageComposerDTO dto) {
         writer.appendBoolean(true);
         writer.appendBoolean(false);
         writer.appendBoolean(true);

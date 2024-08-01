@@ -15,7 +15,7 @@ public class InventoryAchievementsComposer implements  IInventoryAchievementsCom
     }
 
     @Override
-    public void compose(IPacketWriter writer, InventoryAchievementsComposerDTO dto) {
+    public void encode(IPacketWriter writer, InventoryAchievementsComposerDTO dto) {
         writer.appendInt(0);
     }
 }

@@ -10,7 +10,7 @@ import packets.outgoing.session.wardobe.IUserClothesComposer;
 
 public class UserClothesComposer implements IUserClothesComposer {
     @Override
-    public void compose(IPacketWriter writer, UserClothesComposerDTO dto) {
+    public void encode(IPacketWriter writer, UserClothesComposerDTO dto) {
         writer.appendInt(0);
         writer.appendInt(0);
     }

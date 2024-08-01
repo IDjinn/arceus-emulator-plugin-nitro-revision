@@ -3,17 +3,18 @@ package outgoing.session.logindata;
 import networking.packets.IPacketDTO;
 import networking.packets.IPacketWriter;
 import outgoing.OutgoingHeaders;
+import packets.dto.outgoing.session.logindata.UserAchievementScoreComposerDTO;
 import packets.outgoing.session.logindata.IUserAchievementScoreComposer;
 
 
 public class UserAchievementScoreComposer implements  IUserAchievementScoreComposer {
     @Override
-    public void compose(IPacketWriter writer, IPacketDTO dto) {
-        writer.appendInt(100);
+    public int getHeaderId() {
+        return OutgoingHeaders.UserAchievementScoreComposer;
     }
 
     @Override
-    public int getHeaderId() {
-        return OutgoingHeaders.UserAchievementScoreComposer;
+    public void encode(IPacketWriter writer, UserAchievementScoreComposerDTO dto) {
+        writer.appendInt(100);
     }
 }

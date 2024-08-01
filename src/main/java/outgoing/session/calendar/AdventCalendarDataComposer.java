@@ -14,7 +14,7 @@ public class AdventCalendarDataComposer implements IAdventCalendarDataComposer {
     }
 
     @Override
-    public void compose(IPacketWriter writer, AdventCalendarDataComposerDTO dto) {
+    public void encode(IPacketWriter writer, AdventCalendarDataComposerDTO dto) {
         writer.appendString("xmas14");
         writer.appendString("");
         writer.appendInt(0);

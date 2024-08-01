@@ -8,7 +8,7 @@ import packets.outgoing.rooms.data.IRoomModelComposer;
 
 public class RoomModelComposer implements  IRoomModelComposer {
     @Override
-    public void compose(IPacketWriter writer, RoomModelComposerDTO dto) {
+    public void encode(IPacketWriter writer, RoomModelComposerDTO dto) {
         writer.appendString(dto.modelName());
         writer.appendInt(dto.roomId());
     }

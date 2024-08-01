@@ -8,7 +8,7 @@ import packets.outgoing.catalog.ICatalogPurchaseOKComposer;
 
 public class CatalogPurchaseOKComposer implements ICatalogPurchaseOKComposer {
     @Override
-    public void compose(IPacketWriter writer, CatalogPurchaseOkComposerDTO dto) {
+    public void encode(IPacketWriter writer, CatalogPurchaseOkComposerDTO dto) {
         final var item = dto.catalogItem();
         writer.appendInt(item.getId());
         writer.appendString(item.getFurniture().getItemName());

@@ -14,7 +14,7 @@ public class EnableNotificationsComposer implements  IEnableNotificationsCompose
     }
 
     @Override
-    public void compose(IPacketWriter writer, EnableNotificationsComposerDTO dto) {
+    public void encode(IPacketWriter writer, EnableNotificationsComposerDTO dto) {
         writer.appendBoolean(true);
     }
 }

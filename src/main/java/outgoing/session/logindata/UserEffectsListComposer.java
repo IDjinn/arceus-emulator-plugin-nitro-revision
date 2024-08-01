@@ -14,7 +14,7 @@ public class UserEffectsListComposer implements  IUserEffectsListComposer {
     }
 
     @Override
-    public void compose(IPacketWriter writer, UserEffectsListComposerDTO dto) {
+    public void encode(IPacketWriter writer, UserEffectsListComposerDTO dto) {
         writer.appendInt(0);
     }
 }

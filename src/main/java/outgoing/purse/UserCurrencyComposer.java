@@ -8,7 +8,7 @@ import packets.outgoing.purse.IUserCurrencyComposer;
 
 public class UserCurrencyComposer implements  IUserCurrencyComposer {
     @Override
-    public void compose(IPacketWriter writer, UserCurrencyComposerDTO dto) {
+    public void encode(IPacketWriter writer, UserCurrencyComposerDTO dto) {
         writer.appendInt(dto.currencies().size());
         for (final var currency : dto.currencies()) {
             writer.appendInt(currency.getCurrencyType());

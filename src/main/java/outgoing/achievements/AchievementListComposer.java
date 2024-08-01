@@ -14,7 +14,7 @@ public class AchievementListComposer implements IAchievementListComposer {
     }
 
     @Override
-    public void compose(IPacketWriter writer, AchievementListComposerDTO dto) {
+    public void encode(IPacketWriter writer, AchievementListComposerDTO dto) {
         writer.appendInt(0);
     }
 }

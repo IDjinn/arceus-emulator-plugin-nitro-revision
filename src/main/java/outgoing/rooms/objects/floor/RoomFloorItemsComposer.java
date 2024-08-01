@@ -13,7 +13,7 @@ public class RoomFloorItemsComposer implements  IRoomFloorItemsComposer {
     private @Inject OwnerItemListSerializer ownerItemListSerializer;
 
     @Override
-    public void compose(IPacketWriter writer, RoomFloorItemsComposerDTO dto) {
+    public void encode(IPacketWriter writer, RoomFloorItemsComposerDTO dto) {
         this.ownerItemListSerializer.serialize(writer, dto.owners());
         
         writer.appendInt(dto.allItems().size());

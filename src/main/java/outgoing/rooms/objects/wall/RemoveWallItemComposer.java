@@ -8,7 +8,7 @@ import packets.outgoing.rooms.objects.wall.IRemoveWallItemComposer;
 
 public class RemoveWallItemComposer implements  IRemoveWallItemComposer {
     @Override
-    public void compose(IPacketWriter writer, RemoveWallItemComposerDTO dto) {
+    public void encode(IPacketWriter writer, RemoveWallItemComposerDTO dto) {
         writer.appendString(String.valueOf(dto.wallItem().getVirtualId()));
         writer.appendInt(dto.pickupPlayerId());
     }

@@ -11,7 +11,7 @@ import serializers.items.FloorItemSerializer;
 public class AddFloorItemComposer implements  IAddFloorItemComposer {
     private @Inject FloorItemSerializer floorItemSerializer;
     @Override
-    public void compose(IPacketWriter writer, AddFloorItemComposerDTO dto) {
+    public void encode(IPacketWriter writer, AddFloorItemComposerDTO dto) {
         this.floorItemSerializer.serialize(writer, dto.floorItem());
     }
 

@@ -18,7 +18,7 @@ public class RoomRelativeMapComposer implements  IRoomRelativeMapComposer {
     }
 
     @Override
-    public void compose(IPacketWriter writer, RoomRelativeMapComposerDTO dto) {
+    public void encode(IPacketWriter writer, RoomRelativeMapComposerDTO dto) {
         final var gameMap = dto.roomGameMap();
         writer.appendInt(gameMap.getMapSize() / gameMap.getMaxY());
         writer.appendInt(gameMap.getMapSize());

@@ -14,7 +14,7 @@ public class CanCreateRoomComposer implements  ICanCreateRoomComposer {
     }
 
     @Override
-    public void compose(IPacketWriter writer, CanCreateRoomComposerDTO dto) {
+    public void encode(IPacketWriter writer, CanCreateRoomComposerDTO dto) {
         writer.appendInt(0); // 0 = can create room, 1 = room limit reached
         writer.appendInt(50); // room limit
     }

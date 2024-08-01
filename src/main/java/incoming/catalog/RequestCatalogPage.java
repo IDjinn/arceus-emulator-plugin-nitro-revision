@@ -5,8 +5,8 @@ import habbo.catalog.ICatalogManager;
 import networking.client.IClient;
 import networking.packets.incoming.IIncomingPacket;
 import incoming.IncomingEvent;
-import packets.incoming.IncomingHeaders;
-import packets.outgoing.catalog.CatalogPageComposer;
+import incoming.IncomingHeaders;
+import packets.dto.outgoing.catalog.CatalogPageComposerDTO;
 
 public class RequestCatalogPage extends IncomingEvent {
     @Inject
@@ -27,6 +27,6 @@ public class RequestCatalogPage extends IncomingEvent {
         if (page == null)
             return;
 
-        client.sendMessage(new CatalogPageComposer(page, client.getHabbo(), offerId, mode));
+        client.sendMessage(new CatalogPageComposerDTO(page, client.getHabbo(), offerId, mode));
     }
 }

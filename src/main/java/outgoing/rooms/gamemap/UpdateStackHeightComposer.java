@@ -10,7 +10,7 @@ import serializers.rooms.gamemap.GameMapSerializer;
 public class UpdateStackHeightComposer implements  IUpdateStackHeightComposer {
     private @Inject GameMapSerializer gameMapSerializer;
     @Override
-    public void compose(IPacketWriter writer, UpdateStackHeightComposerDTO dto) {
+    public void encode(IPacketWriter writer, UpdateStackHeightComposerDTO dto) {
         writer.appendInt(dto.tiles().size());
         for (final var tile : dto.tiles()) {
             writer.appendInt(tile.getX());

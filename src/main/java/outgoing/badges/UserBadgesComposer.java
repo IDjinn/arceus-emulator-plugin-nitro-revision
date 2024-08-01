@@ -7,7 +7,7 @@ import packets.outgoing.badges.IUserBadgesComposer;
 
 public class UserBadgesComposer implements IUserBadgesComposer {
     @Override
-    public void compose(IPacketWriter writer, UserBadgesComposerDTO dto) {
+    public void encode(IPacketWriter writer, UserBadgesComposerDTO dto) {
         writer.appendInt(dto.userId());
         for (final var entry : dto.badges().entrySet()) {
             final var slot = entry.getKey();

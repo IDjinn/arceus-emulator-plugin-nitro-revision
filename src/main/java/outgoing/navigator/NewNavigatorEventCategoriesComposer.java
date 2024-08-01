@@ -8,7 +8,7 @@ import packets.outgoing.navigator.INewNavigatorEventCategoriesComposer;
 
 public class NewNavigatorEventCategoriesComposer implements  INewNavigatorEventCategoriesComposer {
     @Override
-    public void compose(IPacketWriter writer, NewNavigatorEventCategoriesComposerDTO dto) {
+    public void encode(IPacketWriter writer, NewNavigatorEventCategoriesComposerDTO dto) {
         writer.appendInt(dto.categories().size());
         for (final var category : dto.categories()) {
             writer.appendInt(category.getId());

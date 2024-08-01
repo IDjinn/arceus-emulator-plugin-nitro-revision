@@ -7,8 +7,8 @@ import networking.client.IClient;
 import networking.packets.incoming.IIncomingPacket;
 import incoming.IncomingEvent;
 import org.jetbrains.annotations.Nullable;
-import packets.incoming.IncomingHeaders;
-import packets.outgoing.rooms.session.HotelViewComposer;
+import incoming.IncomingHeaders;
+import packets.dto.outgoing.room.session.HotelViewComposerDTO;
 
 @Singleton
 public class RequestRoomLoadEvent extends IncomingEvent {
@@ -32,7 +32,7 @@ public class RequestRoomLoadEvent extends IncomingEvent {
         var room = this.roomManager.tryLoadRoom(id);
 
         if (room == null) {
-            client.sendMessage(new HotelViewComposer());
+            client.sendMessage(new HotelViewComposerDTO());
             return;
         }
 

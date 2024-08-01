@@ -8,7 +8,7 @@ import packets.outgoing.inventory.IRemoveHabboItemComposer;
 
 public class RemoveHabboItemComposer implements  IRemoveHabboItemComposer {
     @Override
-    public void compose(IPacketWriter writer, RemoveHabboItemComposerDTO dto) {
+    public void encode(IPacketWriter writer, RemoveHabboItemComposerDTO dto) {
         writer.appendInt(dto.itemId());
     }
 

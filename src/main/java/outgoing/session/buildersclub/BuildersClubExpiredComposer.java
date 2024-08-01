@@ -14,7 +14,7 @@ public class BuildersClubExpiredComposer implements  IBuildersClubExpiredCompose
     }
 
     @Override
-    public void compose(IPacketWriter writer, BuildersClubExpiredComposerDTO dto) {
+    public void encode(IPacketWriter writer, BuildersClubExpiredComposerDTO dto) {
         writer.appendInt(Integer.MAX_VALUE);
         writer.appendInt(0);
         writer.appendInt(100);

@@ -2,10 +2,10 @@ package incoming.catalog;
 
 import com.google.inject.Inject;
 import habbo.catalog.ICatalogManager;
+import incoming.IncomingHeaders;
 import networking.client.IClient;
 import networking.packets.incoming.IIncomingPacket;
 import incoming.IncomingEvent;
-import packets.incoming.IncomingHeaders;
 
 public class CatalogBuyItemEvent extends IncomingEvent {
     @Inject

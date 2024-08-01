@@ -12,7 +12,7 @@ public class AddWallItemComposer implements  IAddWallItemComposer {
     private @Inject WallItemSerializer wallItemSerializer;
 
     @Override
-    public void compose(IPacketWriter writer, AddWallItemComposerDTO dto) {
+    public void encode(IPacketWriter writer, AddWallItemComposerDTO dto) {
         this.wallItemSerializer.serialize(writer, dto.wallItem());
     }
 

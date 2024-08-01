@@ -13,7 +13,7 @@ public class CatalogPageComposer implements  ICatalogPageComposer {
     private @Inject CatalogPageSerializer catalogPageSerializer;
     private @Inject CatalogPageItemsSerializer catalogPageItemsSerializer;
     @Override
-    public void compose(IPacketWriter writer, CatalogPageComposerDTO dto) {
+    public void encode(IPacketWriter writer, CatalogPageComposerDTO dto) {
         final var page = dto.page();
         
         writer.appendInt(page.getId());

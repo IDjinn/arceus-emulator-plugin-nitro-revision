@@ -14,7 +14,7 @@ public class IsFirstLoginOfDayComposer implements  IIsFirstLoginOfDayComposer {
     }
 
     @Override
-    public void compose(IPacketWriter writer, IsFirstLoginOfDayComposerDTO dto) {
+    public void encode(IPacketWriter writer, IsFirstLoginOfDayComposerDTO dto) {
         writer.appendBoolean(true);
     }
 }

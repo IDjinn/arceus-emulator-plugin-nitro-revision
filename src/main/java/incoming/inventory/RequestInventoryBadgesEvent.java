@@ -6,9 +6,9 @@ import habbo.habbos.IHabboManager;
 import networking.client.IClient;
 import networking.packets.incoming.IIncomingPacket;
 import incoming.IncomingEvent;
-import packets.incoming.IncomingHeaders;
-import packets.outgoing.badges.UserBadgesComposer;
-import packets.outgoing.inventory.InventoryBadgesComposer;
+import incoming.IncomingHeaders;
+import packets.dto.outgoing.badges.UserBadgesComposerDTO;
+import packets.dto.outgoing.inventory.InventoryBadgesComposerDTO;
 import storage.repositories.habbo.IHabboBadgesRepository;
 
 import java.util.HashMap;
@@ -29,7 +29,7 @@ public class RequestInventoryBadgesEvent extends IncomingEvent {
     @Override
     public void parse(IIncomingPacket packet, IClient client) {
         if (packet.getReadableBytes() == 0) {
-            client.sendMessages(new InventoryBadgesComposer(
+            client.sendMessages(new InventoryBadgesComposerDTO(
                     client.getHabbo().getBadgesComponent().getBadges(),
                     client.getHabbo().getBadgesComponent().getProfileEquippedBadges()
             ));
@@ -39,7 +39,7 @@ public class RequestInventoryBadgesEvent extends IncomingEvent {
         final int userId = packet.readInt();
         if (this.habboManager.isOnline(userId)) {
             final var target = this.habboManager.getOnlineHabbo(userId).get();
-            client.sendMessage(new UserBadgesComposer(userId, target.getBadgesComponent().getProfileEquippedBadges()));
+            client.sendMessage(UserBadgesComposerDTO.of(userId, target.getBadgesComponent().getProfileEquippedBadges()));
             return;
         }
 
@@ -50,6 +50,7 @@ public class RequestInventoryBadgesEvent extends IncomingEvent {
 
             equippedBadges.put(result.getInt("slot_id"), result.getString("badge_code"));
         }, userId);
-        client.sendMessage(new UserBadgesComposer(equippedBadges, userId));
+        
+        client.sendMessage(new UserBadgesComposerDTO(userId, equippedBadges));
     }
 }

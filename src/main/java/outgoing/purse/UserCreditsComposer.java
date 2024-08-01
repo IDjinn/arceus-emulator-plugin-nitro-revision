@@ -8,7 +8,7 @@ import packets.outgoing.purse.IUserCreditsComposer;
 
 public class UserCreditsComposer implements  IUserCreditsComposer {
     @Override
-    public void compose(IPacketWriter writer, UserCreditsComposerDTO dto) {
+    public void encode(IPacketWriter writer, UserCreditsComposerDTO dto) {
         writer.appendString(STR."\{dto.value()}");
     }
 
